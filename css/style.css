@@ -1,0 +1,287 @@
+@keyframes pulse {
+  to {
+    transform: scale(1.1);
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  font-family: "Helvetica", "Arial", sans-serif;
+  line-height: 1.5;
+  color: #555;
+  background-color: #555;
+  background-image:   -moz-radial-gradient(center, ellipse cover, #fff 0%, #000 90%);
+  background-image:   -webkit-radial-gradient(center, ellipse cover, #fff 0%, #000 90%);
+  background-image:   -o-radial-gradient(center, ellipse cover, #fff 0%, #000 90%);
+  background-image:   -ms-radial-gradient(center, ellipse cover, #fff 0%, #000 90%);
+  background-image:   radial-gradient(center, ellipse cover, #fff 0%, #000 90%);
+  filter:             progid:DXImageTransform.Microsoft.gradient(startColorstr = '#029CC9', endColorstr = '#005077', GradientType = 0);
+}
+
+h1,
+h2,
+strong {
+  color: #333;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.svg-icon-defs {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+}
+
+.container {
+   overflow-x: hidden;
+}
+
+.full-width-image {
+  max-width: 1000px;
+  height: auto;
+  width: 100%;
+}
+
+.hero {
+  position: relative;
+  min-height: 100%;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+.offscreen-intro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100vh);
+  width: 20em;
+  max-width: calc(100% - 2em);
+  padding: 1.5em 2em;
+  transition: transform 0.5s, background-color 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+.offscreen-intro.on {
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(85, 85, 85, 0.4);
+}
+
+.offscreen-intro .message a:hover:before {
+  transform: scaleX(1);
+  visibility: visible;
+}
+
+.offscreen-intro .message {
+  margin: 0;
+  text-align: center;
+  opacity: 0;
+  font-size: 1.2em;
+  transition: 0.5s opacity 0.5s ease-in-out;
+}
+
+.offscreen-intro .message a {
+  position: relative;
+  color: #C4A182;
+  text-decoration: none;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.5px;
+}
+
+.offscreen-intro .message a:hover {
+  color: #C4A182;
+}
+
+.offscreen-intro .message a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #555;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.offscreen-intro .close {
+  position: absolute;
+  top: -1em;
+  right: -1em;
+  width: 2em;
+  height: 2em;
+  color: #C4A182;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: center;
+  transition: 0.5s transform 1s, 0.5s opacity 1s;
+}
+
+.offscreen-intro.on .message {
+  opacity: 1;
+}
+
+.offscreen-intro.on .close {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.offscreen-intro.on .icon-close {
+  animation: 0.6s pulse linear infinite alternate;
+}
+
+.offscreen-blocks {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  z-index: -1;
+}
+
+.offscreen-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  text-align: center;
+  height: 50vh;
+  position: absolute;
+  transition-duration: 0.25s;
+  transition-property: transform;
+  transition-timing-function: ease-in-out;
+}
+
+.offscreen-block:before {
+  content: '';
+  display: block;
+  width: 50vw;
+  height: 100%;
+  background: rgba(30, 23, 10, 0.85);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.offscreen-blocks:hover .offscreen-block:hover:before,
+.offscreen-block:focus {
+  background: rgba(173, 146, 119, 1);
+}
+
+.offscreen-blocks:hover .offscreen-block:hover button,
+.offscreen-block:focus .offscreen-block button,
+.offscreen-blocks:hover .offscreen-block:hover .button,
+.offscreen-block:focus .offscreen-block .button {
+  color: #000;
+}
+
+.offscreen-block:focus,
+.offscreen-block button:focus,
+.offscreen-block .button:focus {
+  outline: none;
+}
+
+.offscreen-block:nth-child(1) {
+  transform: translate(0, -100vh);
+  transition-delay: 0.5s;
+}
+
+.offscreen-block:nth-child(2) {
+  right: 0;
+  top: 0;
+  transform: translate(100vw, 0);
+  transition-delay: 0.9s;
+}
+
+.offscreen-block:nth-child(3) {
+  left: 0;
+  bottom: 0;
+  transform: translate(0, 100vh);
+  transition-delay: 1.2s;
+}
+
+.offscreen-block:nth-child(4) {
+  right: 0;
+  bottom: 0;
+  transform: translate(100vh, 0);
+  transition-delay: 1.4s;
+}
+
+.offscreen-block button,
+.offscreen-block .button {
+  padding: 4em;
+  max-width: 100%;
+  max-height: 100%;
+  color: rgba(173, 146, 119, 1);
+  transition: 0.5s color;
+}
+
+.offscreen-block .button {
+  padding: 2.8em;
+}
+
+:target {
+  z-index: 1;
+}
+
+:target .offscreen-block {
+  transform: translate(0, 0);
+}
+
+button svg {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+path {
+  fill: currentColor;
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+}
+
+.icon-close {
+  fill: #B49452;
+  color: white;
+  transform-origin: center;
+  stroke: white;
+}
