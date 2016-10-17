@@ -188,8 +188,6 @@
     </symbol>
   </svg>
 
-
-
   <div class="container">
     <main>
 
@@ -242,30 +240,61 @@
   </div> <!-- .container -->
   <script>
     (function() {
-      var offscreen_intro  = document.querySelector(".offscreen-intro"),
-          offscreen_blocks = document.querySelector(".offscreen-blocks");
+      var offscreen_intro  = document.querySelector(".offscreen-intro");
+
+      function localStorageIsSupported() {
+        var test = "code_test";
+
+        try {
+          localStorage.setItem(test, test);
+          localStorage.removeItem(test);
+          return true;
+        } catch(e) {
+          return false;
+        }
+      }
+
+      function setStorage(key, val) {
+        if (localStorageIsSupported()) {
+          localStorage.setItem(key, val);
+        }
+      }
+
+      function removeStorage(key) {
+        if (localStorageIsSupported()) {
+
+          if (getStorage(key) !== undefined) {
+            localStorage.removeItem(key);
+          }
+        }
+      }
 
       function removeIntro() {
         offscreen_intro.classList.remove("on");
       }
 
+      function isFirstVisit() {
+        return localStorage.getItem("first_visit") === null;
+      }
+
       function initIntro() {
-        if (window.location.hash.substr(1).length === 0) {
-          setTimeout(function() {
-            offscreen_intro.classList.add("on");
-          }, 500);
+        if (isFirstVisit()) {
+          setStorage("first_visit", "false");
+
+          if (window.location.hash.substr(1).length === 0) {
+            setTimeout(function() {
+              offscreen_intro.classList.add("on");
+            }, 500);
+          } else {
+            removeIntro();
+          }
         } else {
-          removeIntro();
+          window.location.hash = "navigation"
         }
       }
 
-/*      function initBlocks() {
-        offscreen_blocks.classList.add("on");
-      }*/
-
       offscreen_intro.addEventListener("click", function() {
         removeIntro();
-        //initBlocks();
       });
 
       window.onload = initIntro;

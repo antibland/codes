@@ -136,7 +136,7 @@ main {
   background-color: #555;
   visibility: hidden;
   transform: scaleX(0);
-  transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s 0s ease-in-out;
 }
 
 .offscreen-intro .close {
@@ -183,6 +183,7 @@ main {
   position: absolute;
   transition-duration: 0.25s;
   transition-property: transform;
+  transition-delay: 0.1s;
   transition-timing-function: ease-in-out;
 }
 
@@ -195,7 +196,7 @@ main {
   position: absolute;
   top: 0;
   left: 0;
-  transition: 0.5s;
+  transition: 0.5s background-color;
   z-index: -1;
 }
 
