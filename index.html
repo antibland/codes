@@ -193,42 +193,40 @@
 
       <div class="hero">
         <img src="img/me@2x.jpg" alt="Andy Hoffman" class="full-width-image">
-        <div class="offscreen-intro">
-          <p class="message">Missing semi-colons are irksome. Inconsistent indentation pains me. That uncached <abbr title="Document Object Model">DOM</abbr> lookup affects my overall sleep. It's true—I care deeply about the performance, <a href="http://alistapart.com/article/accessibility-the-missing-ingredient">accessibility</a> and longevity of of the web.
+        <div class="intro">
+          <p>Missing semi-colons are irksome. Inconsistent indentation pains me. That uncached <abbr title="Document Object Model">DOM</abbr> lookup affects my overall sleep. It's true—I care deeply about the performance, <a class="link" href="http://alistapart.com/article/accessibility-the-missing-ingredient">accessibility</a> and longevity of of the web.
           </p>
-          <a href="#navigation" class="button close">
-            <svg class="icon icon-close">
-              <use xlink:href="#close-button"/>
-            </svg>
-          </a>
+          <p>Right now I'm interested in <strong>side project collaboration</strong> and <strong>mentoring</strong> junior front-end developers find their place in the sector.</p>
+          <p>It's really easy to get a hold of me. Seriously, I'm right here.</p>
+          <p><a href="#contact" class="button--serious">GET IN TOUCH</a></p>
         </div>
       </div>
 
     </main>
 
-    <div class="offscreen-blocks" id="navigation">
-      <div class="offscreen-block" tabindex="0">
+    <div class="blocks" id="navigation">
+      <div class="block" tabindex="0">
         <a href="https://github.com/antibland/" class="button">
           <svg class="icon icon-github">
             <use xlink:href="#github"/>
           </svg>
         </a>
       </div>
-      <div class="offscreen-block" tabindex="0">
+      <div class="block" tabindex="0">
         <a href="http://alistapart.com/author/Antibland" class="button">
           <svg class="icon icon-pencil">
             <use xlink:href="#pencil"/>
           </svg>
         </a>
       </div>
-      <div class="offscreen-block" tabindex="0">
+      <div class="block" tabindex="0">
         <a href="https://twitter.com/antibland" class="button">
           <svg class="icon icon-twitter">
             <use xlink:href="#twitter"/>
           </svg>
         </a>
       </div>
-      <div class="offscreen-block" tabindex="0">
+      <div class="block" tabindex="0">
         <button>
           <svg class="icon icon-email">
             <use xlink:href="#email"/>
@@ -239,66 +237,13 @@
 
   </div> <!-- .container -->
   <script>
-    (function() {
-      var offscreen_intro  = document.querySelector(".offscreen-intro");
-
-      function localStorageIsSupported() {
-        var test = "code_test";
-
-        try {
-          localStorage.setItem(test, test);
-          localStorage.removeItem(test);
-          return true;
-        } catch(e) {
-          return false;
-        }
+    (function(window) {
+      function init() {
+        document.body.classList.add("on");
       }
 
-      function setStorage(key, val) {
-        if (localStorageIsSupported()) {
-          localStorage.setItem(key, val);
-        }
-      }
-
-      function removeStorage(key) {
-        if (localStorageIsSupported()) {
-
-          if (getStorage(key) !== undefined) {
-            localStorage.removeItem(key);
-          }
-        }
-      }
-
-      function removeIntro() {
-        offscreen_intro.classList.remove("on");
-      }
-
-      function isFirstVisit() {
-        return localStorage.getItem("first_visit") === null;
-      }
-
-      function initIntro() {
-        if (isFirstVisit()) {
-          setStorage("first_visit", "false");
-
-          if (window.location.hash.substr(1).length === 0) {
-            setTimeout(function() {
-              offscreen_intro.classList.add("on");
-            }, 500);
-          } else {
-            removeIntro();
-          }
-        } else {
-          window.location.hash = "navigation"
-        }
-      }
-
-      offscreen_intro.addEventListener("click", function() {
-        removeIntro();
-      });
-
-      window.onload = initIntro;
-    })()
+      window.onload = init;
+    })(window)
   </script>
 
 </body>
