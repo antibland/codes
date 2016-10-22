@@ -71,7 +71,6 @@ main {
   left: 0;
   transform: translate(0, 0);
   position: relative;
-  margin-bottom: -0.6em;
 }
 
 .svg-icon-defs {
@@ -93,7 +92,6 @@ main {
   max-width: 1000px;
   height: auto;
   width: 100%;
-  margin-bottom: 0.2em;
 }
 
 .hero {
@@ -102,6 +100,7 @@ main {
   margin: 0 auto;
   display: block;
   text-align: center;
+  margin-bottom: -0.6em;
 }
 
 .intro {
@@ -231,6 +230,15 @@ path {
   color: white;
   transform-origin: center;
   stroke: white;
+}
+
+footer {
+  padding: 1em 1.5em;
+}
+
+footer small {
+  color: rgba(255, 146, 119, 0.6);
+  font-style: italic;
 }
 
 
