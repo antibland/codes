@@ -45,7 +45,7 @@ button {
   background-color: #e19277;
   border-radius: 4px;
   text-indent: 0;
-  border: 1px solid #555;
+  border: 1px solid rgba(85, 85, 85, 0.5);
   display: inline-block;
   color: white;
   font-size: 0.9em;
@@ -138,7 +138,7 @@ main {
   height: 1px;
   bottom: 0;
   left: 0;
-  background-color: #555;
+  background-color: rgb(255, 146, 119);
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.3s 0s ease-in-out;
