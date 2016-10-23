@@ -188,7 +188,7 @@ main {
 
 .block button,
 .block .button {
-  max-width: calc(100% - 35vw);
+  max-width: calc(100% - 25vw);
   max-height: 100%;
   color: black;
   transition: 0.5s color;
@@ -249,6 +249,23 @@ footer small {
   border-radius: 4px;
 }
 
+@media screen and (min-width: 430px) {
+  .block button, .block .button {
+    max-width: calc(100% - 30vw);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .block button, .block .button {
+    max-width: calc(100% - 32vw);
+  }
+}
+
+@media screen and (min-width: 680px) {
+  .block button, .block .button {
+    max-width: calc(100% - 34vw);
+  }
+}
 
 @media screen and (min-width: 800px) {
   body {

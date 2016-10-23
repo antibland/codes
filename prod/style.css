@@ -271,8 +271,8 @@ main {
 
 .block button,
 .block .button {
-  max-width: -moz-calc(100% - 35vw);
-  max-width: calc(100% - 35vw);
+  max-width: -moz-calc(100% - 25vw);
+  max-width: calc(100% - 25vw);
   max-height: 100%;
   color: black;
   -webkit-transition: 0.5s color;
@@ -338,6 +338,26 @@ footer small {
   border-radius: 4px;
 }
 
+@media screen and (min-width: 430px) {
+  .block button, .block .button {
+    max-width: -moz-calc(100% - 30vw);
+    max-width: calc(100% - 30vw);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .block button, .block .button {
+    max-width: -moz-calc(100% - 32vw);
+    max-width: calc(100% - 32vw);
+  }
+}
+
+@media screen and (min-width: 680px) {
+  .block button, .block .button {
+    max-width: -moz-calc(100% - 34vw);
+    max-width: calc(100% - 34vw);
+  }
+}
 
 @media screen and (min-width: 800px) {
   body {
