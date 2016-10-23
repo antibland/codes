@@ -406,6 +406,10 @@ footer small {
     display: flex;
   }
 
+  .hero img {
+    margin-bottom: 0;
+  }
+
   .on .hero {
     min-width: 70vw;
   }
