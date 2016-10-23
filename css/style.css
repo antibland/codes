@@ -282,6 +282,12 @@ footer small {
   .blocks {
     flex-direction: column;
     width: 15vw;
+    transition: 0.5s opacity;
+    opacity: 0;
+  }
+
+  .on .blocks {
+    opacity: 1;
   }
 
   .blocks--left {
@@ -290,6 +296,8 @@ footer small {
 
   .block {
     width: auto;
+    flex: 1;
+    align-items: center;
   }
 
   .block button,

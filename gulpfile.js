@@ -13,8 +13,7 @@ gulp.task('build-css', function() {
         '> 1%',
         'last 2 versions',
         'firefox >= 4',
-        'safari 7',
-        'safari 8',
+        'safari >= 7',
         'IE 9',
         'IE 10',
         'IE 11'
