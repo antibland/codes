@@ -3,6 +3,7 @@ var gutil = require('gulp-util');
 var watch = require('gulp-watch');
 var plumber = require('gulp-plumber');
 var autoprefixer = require('gulp-autoprefixer');
+var cleanCSS = require('gulp-clean-css');
 
 // CSS
 gulp.task('build-css', function() {
@@ -20,6 +21,7 @@ gulp.task('build-css', function() {
       ],
       cascade: false
     }))
+    .pipe(cleanCSS())
     .pipe(gulp.dest('./prod'));
 });
 
