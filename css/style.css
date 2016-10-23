@@ -186,12 +186,6 @@ main {
   color: rgb(255, 146, 119);
 }
 
-.block:focus,
-.block button:focus,
-.block .button:focus {
-  outline: none;
-}
-
 .block button,
 .block .button {
   max-width: calc(100% - 35vw);
@@ -199,6 +193,11 @@ main {
   color: black;
   transition: 0.5s color;
   z-index: 10;
+}
+
+.button:focus {
+  color: rgb(255, 146, 119);
+  outline: none;
 }
 
 button svg {
