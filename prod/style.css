@@ -22,6 +22,7 @@ body {
   background-image: -webkit-radial-gradient(center, ellipse cover, #fff 0%, #000 90%);
   background-image: -moz-radial-gradient(center, ellipse cover, #fff 0%, #000 90%);
   background-image: radial-gradient(center, ellipse cover, #fff 0%, #000 90%);
+  font-family: 'Droid Sans', sans-serif;
 }
 
 h1,
@@ -312,7 +313,7 @@ path {
 }
 
 footer {
-  padding: 1em 1.5em;
+  padding: 1.6em 1.5em;
   position: relative;
   background: gray;
   text-align: center;
@@ -325,16 +326,17 @@ footer .bg:after {
   top: 0;
   width: 100%;
   height: 100%;
-  background: url(/img/github_stats.png) 0 0 repeat-x;
-  background-position: 48% 50%;
-  opacity: 0.2;
+  background: url(/img/github_stats.png) 50% 50% repeat-x;
+  background-size: contain;
+  opacity: 0.35;
 }
 
 footer small {
-  color: rgb(255, 146, 119);
+  color: white;
   background: black;
-  padding: 0.8em;
   font-style: italic;
+  padding: 0.8em;
+  border-radius: 4px;
 }
 
 
@@ -408,6 +410,18 @@ footer small {
 
   .hero img {
     margin-bottom: 0;
+  }
+
+  .hero:after {
+    content: '';
+    background-color: rgba(255, 255, 255, 0.85);
+    height: 10px;
+    width: 100%;
+    position: absolute;
+    bottom: -10px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    box-shadow: 0 4px 2px -2px gray;
   }
 
   .on .hero {
