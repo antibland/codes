@@ -107,7 +107,7 @@ main {
 .intro {
   position: relative;
   padding: 1.5em 2em;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: white;
   transition: opacity 0.5s;
   flex: 1;
   display: flex;
@@ -315,7 +315,7 @@ footer small {
 
   .hero:after {
     content: '';
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: white;
     height: 10px;
     width: 100%;
     position: absolute;
