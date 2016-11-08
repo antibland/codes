@@ -189,6 +189,7 @@ main {
 .blocks:hover .block:hover .button,
 .blocks:focus .block .button {
   color: rgb(255, 146, 119);
+  fill: rgb(255, 146, 119);
 }
 
 .block button,
@@ -196,12 +197,14 @@ main {
   max-width: calc(100% - 25vw);
   max-height: 100%;
   color: #eee;
-  transition: 0.5s color;
+  fill: #eee;
+  transition: 0.5s color, 0.5s fill;
   z-index: 10;
 }
 
 .button:focus {
   color: rgb(255, 146, 119);
+  fill: rgb(255, 146, 119);
   outline: none;
 }
 
