@@ -26,10 +26,15 @@ body {
   font-family: 'Droid Sans', sans-serif;
 }
 
+.animation--writing--on {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 h1,
 h2,
 strong {
-  color: #333;
+  color: #555;
 }
 
 button {
@@ -37,6 +42,15 @@ button {
   background: none;
   cursor: pointer;
   appearance: none;
+}
+
+.button--close-dialog {
+  position: absolute;
+  top: -1.9em;
+  right: -2.4em;
+  height: 3.8em;
+  width: 5em;
+  display: inline-block;
 }
 
 .button--serious {
@@ -66,9 +80,59 @@ button {
 }
 
 main {
+  transition: 0.5s opacity, 0.5s transform;
   position: relative;
   flex: 1;
   flex-direction: column;
+  will-change: transform;
+}
+
+.animation--writing--on main {
+  opacity: 0;
+}
+
+dialog {
+  position: fixed;
+  display: block;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transition: 0.5s transform, 0.5s opacity;
+  background: #eee;
+  color: #555;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.25) translate3d(-50%, -50%, 0);
+  transform-origin: 0 0;
+  padding: 1em 2em;
+  border: none;
+  width: 30em;
+  max-width: calc(100% - 5em);
+}
+
+dialog:focus {
+  outline: none;
+}
+
+dialog .content {
+  transform: translate3d(0, 0, 0);
+  max-height: 55vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+dialog dd {
+  margin: 0.25em 0 1em;
+}
+
+dialog p {
+  margin-top: 0;
+}
+
+.animation--writing--on dialog {
+  transform: scale(1) translate3d(-50%, -50%, 0);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .svg-icon-defs {
@@ -131,7 +195,8 @@ main {
   margin-bottom: 0;
 }
 
-.intro .link {
+.intro .link,
+dialog .link {
   position: relative;
   color: rgb(255, 146, 119);
   text-decoration: none;
@@ -139,7 +204,8 @@ main {
   letter-spacing: 0.5px;
 }
 
-.intro .link:before {
+.intro .link:before,
+dialog .link:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -152,7 +218,8 @@ main {
   transition: all 0.3s 0s ease-in-out;
 }
 
-.intro .link:hover:before {
+.intro .link:hover:before,
+dialog .link:hover:before {
   transform: scaleX(1);
   visibility: visible;
 }
@@ -226,15 +293,19 @@ path {
 .icon-close {
   fill: #B49452;
   color: white;
-  transform-origin: center;
-  stroke: white;
 }
 
 footer {
+  transition: 0.5s opacity;
   padding: 1.6em 1.5em;
   position: relative;
   background: gray;
   text-align: center;
+  will-change: opacity;
+}
+
+.animation--writing--on footer {
+  opacity: 0;
 }
 
 footer .bg:after {
@@ -267,6 +338,10 @@ footer small {
   .block button, .block .button {
     max-width: calc(100% - 32vw);
   }
+
+  dialog dd {
+    margin-left: 1em;
+  }
 }
 
 @media screen and (min-width: 680px) {
@@ -285,6 +360,10 @@ footer small {
   main {
     display: flex;
     flex-direction: row;
+  }
+
+  .animation--writing--on main {
+    transform: scale(1.25);
   }
 
   .blocks {
@@ -348,6 +427,6 @@ footer small {
   }
 
   footer .bg:after {
-    animation: 50s move-background linear infinite;
+    animation: 60s move-background linear infinite;
   }
 }
