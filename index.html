@@ -205,7 +205,6 @@
         <p>I code for the web and care oodles about mobile, <a class="link" href="http://alistapart.com/article/accessibility-the-missing-ingredient">accessibility</a>, <a class="link" href="https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fandyhoffman.codes%2F&tab=desktop">page speed</a> and progressive enhancement.
         </p>
         <p>I'm currently interested in <strong>developing awesome mobile experiences</strong> and <strong>mentoring junior developers</strong>. I'll even fix your horrendous page speed score.</p>
-        <p><a href="mailto:antibland@gmail.com?subject=Web Inquiry&amp;body=Okay, make this good." class="button--serious">GET IN TOUCH</a></p>
       </div>
     </div> <!-- you're no .hero -->
 
@@ -235,7 +234,7 @@
         </a>
       </div>
       <div class="block">
-        <a title="Contact me" href="mailto:antibland@gmail.com?subject=Web Inquiry&body=Okay, make this good." class="button">
+        <button class="button button--email">
           <svg class="icon icon-email">
             <use xlink:href="#email"/>
           </svg>
@@ -251,26 +250,38 @@
   </footer>
 
   <div class="dialog" tabindex="0" aria-hidden="true">
-    <h2>Writing</h2>
-    <div class="content">
-      <p>Every few years I try to write something worthwhile. I would write more frequently but writing is hard to do often <em>and</em> well. Here are some greatest hits.</p>
-      <dl>
-        <dt>
-          <a href="http://alistapart.com/article/accessibility-the-missing-ingredient"
-             class="link"
-             target="_blank">Accessibility: The Missing Ingredient
-          </a>
-        </dt>
-        <dd>Even long-time developers are sometimes guilty of considering accessibility at the end of a project (or not at all). In this step-by-step demo, I detail the usefulness of an "accessibility first" approach.</dd>
-        <dt>
-          <a href="http://alistapart.com/article/a-case-for-responsive-resumes"
-             class="link"
-             target="_blank">A Case for Responsive Résumés
-          </a>
-        </dt>
-        <dd>This is a tutorial encouraging developers to adopt a responsive, HTML résumé over a static PDF. I've seen many responsive résumés on the web since my article published. Hopefully I helped move things in the right direction.</dd>
-      </dl>
-    </div>
+    <section data-section="contact">
+      <h2>Hey, Andy!</h2>
+      <form method="POST" action="http://formspree.io/antibland@gmail.com">
+        <input required autocapitalize="none" type="email" name="email" placeholder="Your email, obviously">
+        <textarea required name="message" placeholder="Make it good"></textarea>
+        <button class="button--serious" type="submit">Send</button>
+      </form>
+    </section>
+
+    <section data-section="writing">
+      <h2>Writing</h2>
+      <div class="content">
+        <p>Every few years I try to write something worthwhile. I would write more frequently but writing is hard to do often <em>and</em> well. Here are some greatest hits.</p>
+        <dl>
+          <dt>
+            <a href="http://alistapart.com/article/accessibility-the-missing-ingredient"
+               class="link"
+               target="_blank">Accessibility: The Missing Ingredient
+            </a>
+          </dt>
+          <dd>Even long-time developers are sometimes guilty of considering accessibility at the end of a project (or not at all). In this step-by-step demo, I detail the usefulness of an "accessibility first" approach.</dd>
+          <dt>
+            <a href="http://alistapart.com/article/a-case-for-responsive-resumes"
+               class="link"
+               target="_blank">A Case for Responsive Résumés
+            </a>
+          </dt>
+          <dd>This is a tutorial encouraging developers to adopt a responsive, HTML résumé over a static PDF. I've seen many responsive résumés on the web since my article published. Hopefully I helped move things in the right direction.</dd>
+        </dl>
+      </div>
+    </section>
+
     <button class="button button--close-dialog">
       <svg class="icon icon-close">
         <use xlink:href="#close-button"/>
@@ -281,20 +292,44 @@
   <script>
     (function(window) {
       var pencil       = document.querySelector(".button--pencil"),
-          dialog       = document.querySelector("dialog"),
+          email        = document.querySelector(".button--email"),
+          dialog       = document.querySelector(".dialog"),
           close_dialog = document.querySelector(".button--close-dialog");
 
       pencil.addEventListener("click", pencilClickHandler, false);
+      email.addEventListener("click", emailClickHandler, false);
       close_dialog.addEventListener("click", closeDialogHandler);
 
       function closeDialogHandler() {
-        document.body.classList.remove("animation--writing--on");
+        var body = document.body;
+
+        if (body.classList.contains("animation--writing--on")) {
+          document.body.classList.remove("animation--writing--on");
+          pencil.focus();
+        } else if (body.classList.contains("animation--contact--on")) {
+          document.body.classList.remove("animation--contact--on");
+          email.focus();
+        }
+
         dialog.setAttribute("aria-hidden", true);
-        pencil.focus();
+      }
+
+      function emailClickHandler() {
+        showSection("contact");
+        hideSection("writing");
+        setTimeout(function() {
+          document.body.classList.add("animation--contact--on");
+        }, 0);
+        dialog.setAttribute("aria-hidden", false);
+        dialog.focus();
       }
 
       function pencilClickHandler() {
-        document.body.classList.add("animation--writing--on");
+        showSection("writing");
+        hideSection("contact");
+        setTimeout(function() {
+          document.body.classList.add("animation--writing--on");
+        }, 0);
         dialog.setAttribute("aria-hidden", false);
         dialog.focus();
       }
@@ -305,16 +340,35 @@
         }, 500)
       }
 
+      function showSection(section) {
+        document.querySelector("[data-section=" + section + "]").style.display = "block";
+      }
+
+      function hideSection(section) {
+        document.querySelector("[data-section=" + section + "]").style.display = "none";
+      }
+
+      function dialogIsHidden() {
+        return document.querySelector(".dialog").getAttribute("aria-hidden");
+      }
+
       document.onkeydown = function(evt) {
         evt = evt || window.event;
-        var is_escape = false;
-        if ("key" in evt) {
-          is_escape = (evt.key == "Escape" || evt.key == "Esc");
-        } else {
-          is_escape = (evt.keyCode == 27);
-        }
-        if (is_escape && document.body.classList.contains("animation--writing--on")) {
-          closeDialogHandler();
+        var is_escape = false,
+            body      = document.body;
+
+        if (dialogIsHidden() === "false") {
+          if ("key" in evt) {
+            is_escape = (evt.key == "Escape" || evt.key == "Esc");
+          } else {
+            is_escape = (evt.keyCode == 27);
+          }
+
+          if (is_escape &&
+             (body.classList.contains("animation--writing--on") ||
+              body.classList.contains("animation--contact--on"))) {
+            closeDialogHandler();
+          }
         }
       };
 
