@@ -148,6 +148,30 @@ main {
   margin-top: 0;
 }
 
+.message-success {
+  background: #eee;
+  color: #555;
+  display: none;
+  text-align: center;
+  transition: 0.5s opacity;
+}
+
+.message-success[aria-hidden=true] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.message-success:target {
+  display: block;
+  position: fixed;
+  top: 2em;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 1em;
+  border: none;
+  max-width: calc(100% - 5em);
+}
+
 .animation--writing--on .dialog,
 .animation--contact--on .dialog {
   transform: scale(1) translate3d(-50%, -50%, 0);

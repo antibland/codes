@@ -249,6 +249,12 @@
     <div class="bg"></div>
   </footer>
 
+  <div class="message-success" id="thanks">
+    <h2>Thanks!</h2>
+    <p>I'm probably already reading your message.</p>
+    <p>Click/touch outside this box to close it.</p>
+  </div>
+
   <div class="dialog" tabindex="0" aria-hidden="true">
     <section data-section="contact">
       <h2>Hey, Andy!</h2>
@@ -256,6 +262,7 @@
         <input required autocapitalize="none" type="email" name="email" placeholder="Your email, obviously">
         <textarea required name="message" placeholder="Make it good"></textarea>
         <button class="button--serious" type="submit">Send</button>
+        <input type="hidden" name="_next" value="/#thanks">
       </form>
     </section>
 
@@ -299,6 +306,21 @@
       pencil.addEventListener("click", pencilClickHandler, false);
       email.addEventListener("click", emailClickHandler, false);
       close_dialog.addEventListener("click", closeDialogHandler);
+      document.body.addEventListener("click", function(e) {
+        if (location.hash === "#thanks") {
+          if (!hasSomeParentTheClass(e.target, "message-success")) {
+            document.querySelector(".message-success").setAttribute("aria-hidden", true);
+          }
+        }
+      }, false);
+
+      function hasSomeParentTheClass(element, classname) {
+        if (element.classList && element.classList.contains(classname)) {
+          return true;
+        }
+
+        return element.parentNode && hasSomeParentTheClass(element.parentNode, classname);
+      }
 
       function closeDialogHandler() {
         var body = document.body;
