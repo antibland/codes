@@ -91,7 +91,7 @@ main {
   opacity: 0;
 }
 
-dialog {
+.dialog {
   position: fixed;
   display: block;
   margin: 0;
@@ -110,26 +110,26 @@ dialog {
   max-width: calc(100% - 5em);
 }
 
-dialog:focus {
+.dialog:focus {
   outline: none;
 }
 
-dialog .content {
+.dialog .content {
   transform: translate3d(0, 0, 0);
   max-height: 55vh;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
 
-dialog dd {
+.dialog dd {
   margin: 0.25em 0 1em;
 }
 
-dialog p {
+.dialog p {
   margin-top: 0;
 }
 
-.animation--writing--on dialog {
+.animation--writing--on .dialog {
   transform: scale(1) translate3d(-50%, -50%, 0);
   opacity: 1;
   pointer-events: auto;
@@ -196,7 +196,7 @@ dialog p {
 }
 
 .intro .link,
-dialog .link {
+.dialog .link {
   position: relative;
   color: rgb(255, 146, 119);
   text-decoration: none;
@@ -205,7 +205,7 @@ dialog .link {
 }
 
 .intro .link:before,
-dialog .link:before {
+.dialog .link:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -219,7 +219,7 @@ dialog .link:before {
 }
 
 .intro .link:hover:before,
-dialog .link:hover:before {
+.dialog .link:hover:before {
   transform: scaleX(1);
   visibility: visible;
 }
@@ -339,7 +339,7 @@ footer small {
     max-width: calc(100% - 32vw);
   }
 
-  dialog dd {
+  .dialog dd {
     margin-left: 1em;
   }
 }
