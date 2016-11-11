@@ -48,6 +48,10 @@ textarea, [type=email] {
   margin-bottom: 1em;
 }
 
+textarea {
+  margin-bottom: 0.5em;
+}
+
 button {
   border: none;
   background: none;
