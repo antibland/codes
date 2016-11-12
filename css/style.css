@@ -152,6 +152,10 @@ main {
   margin-top: 0;
 }
 
+.dialog h2 {
+  margin-top: 0.5em;
+}
+
 .message-success {
   background: #eee;
   color: #555;
