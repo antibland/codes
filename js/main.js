@@ -1,30 +1,28 @@
-(function(window) {
-  var pencil       = document.querySelector(".button--pencil"),
-      email        = document.querySelector(".button--email"),
-      dialog       = document.querySelector(".dialog"),
-      close_dialog = document.querySelector(".button--close-dialog");
+(function app(window) {
+  "use strict";
 
-  pencil.addEventListener("click", pencilClickHandler, false);
-  email.addEventListener("click", emailClickHandler, false);
-  close_dialog.addEventListener("click", closeDialogHandler);
-  document.body.addEventListener("click", function(e) {
-    if (location.hash === "#thanks") {
-      if (!hasSomeParentTheClass(e.target, "message-success")) {
-        document.querySelector(".message-success").setAttribute("aria-hidden", true);
-      }
-    }
-  }, false);
+  var doc = window.document;
+  var pencil = doc.querySelector(".button--pencil");
+  var email = doc.querySelector(".button--email");
+  var dialog = doc.querySelector(".dialog");
+  var close_dialog_btns = doc.querySelectorAll(".button--close-dialog");
 
-  function hasSomeParentTheClass(element, classname) {
-    if (element.classList && element.classList.contains(classname)) {
-      return true;
-    }
+  function showSection(section) {
+    document.querySelector(".message-success").setAttribute("aria-hidden", true);
+    document.querySelector("[data-section=" + section + "]").style.display = "block";
+  }
 
-    return element.parentNode && hasSomeParentTheClass(element.parentNode, classname);
+  function hideSection(section) {
+    document.querySelector("[data-section=" + section + "]").style.display = "none";
   }
 
   function closeDialogHandler() {
     var body = document.body;
+    var success_msg = document.querySelector(".message-success");
+    var success_props = {};
+
+    success_props.style = window.getComputedStyle(success_msg);
+    success_props.display = success_props.style.getPropertyValue("display");
 
     if (body.classList.contains("animation--writing--on")) {
       document.body.classList.remove("animation--writing--on");
@@ -32,6 +30,10 @@
     } else if (body.classList.contains("animation--contact--on")) {
       document.body.classList.remove("animation--contact--on");
       email.focus();
+    } else {
+      if (location.hash === "#thanks" && success_props.display === "block") {
+        document.querySelector(".message-success").setAttribute("aria-hidden", true);
+      }
     }
 
     dialog.setAttribute("aria-hidden", true);
@@ -60,15 +62,7 @@
   function init() {
     setTimeout(function() {
       document.body.classList.add("on");
-    }, 500)
-  }
-
-  function showSection(section) {
-    document.querySelector("[data-section=" + section + "]").style.display = "block";
-  }
-
-  function hideSection(section) {
-    document.querySelector("[data-section=" + section + "]").style.display = "none";
+    }, 500);
   }
 
   function dialogIsHidden() {
@@ -77,23 +71,31 @@
 
   document.onkeydown = function(evt) {
     evt = evt || window.event;
-    var is_escape = false,
-        body      = document.body;
+    var is_escape = false;
+    var body = document.body;
 
-    if (dialogIsHidden() === "false") {
-      if ("key" in evt) {
-        is_escape = (evt.key == "Escape" || evt.key == "Esc");
+    if (dialogIsHidden() === "false" || location.hash === "#thanks") {
+      if (evt.hasOwnProperty("key")) {
+        is_escape = (evt.key === "Escape" || evt.key === "Esc");
       } else {
-        is_escape = (evt.keyCode == 27);
+        is_escape = (evt.keyCode === 27);
       }
 
       if (is_escape &&
          (body.classList.contains("animation--writing--on") ||
-          body.classList.contains("animation--contact--on"))) {
+          body.classList.contains("animation--contact--on") ||
+          location.hash === "#thanks")) {
         closeDialogHandler();
       }
     }
   };
 
+  pencil.addEventListener("click", pencilClickHandler, false);
+  email.addEventListener("click", emailClickHandler, false);
+
+  [].forEach.call(close_dialog_btns, function(btn) {
+    btn.addEventListener("click", closeDialogHandler);
+  });
+
   window.onload = init;
-})(window)
+}(window));
