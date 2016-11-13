@@ -38,9 +38,15 @@ strong {
   color: #555;
 }
 
+textarea,
+[type=email],
+[type=text] {
+  font-family: 'Droid Sans', sans-serif;
+}
+
 textarea, [type=email] {
   width: 100%;
-  padding: 0.5em 1em;
+  padding: 0.5em 0.75em;
   font-size: 1em;
 }
 
