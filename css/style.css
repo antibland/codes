@@ -65,6 +65,27 @@ button {
   appearance: none;
 }
 
+figure {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+figure img {
+  display: block;
+}
+
+figcaption {
+  font-style: italic;
+  position: absolute;
+  bottom: 0.5em;
+  left: 0;
+  background: rgba(85, 85, 85, 0.6);
+  padding: 0.5em 0.75em;
+  color: #eee;
+  font-size: 0.8rem;
+}
+
 .button--close-dialog {
   position: absolute;
   top: -1.9em;
@@ -252,8 +273,7 @@ main {
   margin-bottom: 0;
 }
 
-.intro .link,
-.dialog .link {
+.link {
   position: relative;
   color: rgb(255, 146, 119);
   text-decoration: none;
@@ -261,8 +281,7 @@ main {
   letter-spacing: 0.5px;
 }
 
-.intro .link:before,
-.dialog .link:before {
+.link:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -275,8 +294,7 @@ main {
   transition: all 0.3s 0s ease-in-out;
 }
 
-.intro .link:hover:before,
-.dialog .link:hover:before {
+.link:hover:before {
   transform: scaleX(1);
   visibility: visible;
 }
@@ -418,6 +436,10 @@ footer small {
   main {
     display: flex;
     flex-direction: row;
+  }
+
+  figcaption {
+    bottom: 0;
   }
 
   .animation--writing--on main,
