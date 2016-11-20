@@ -277,7 +277,7 @@ main {
   position: relative;
   color: rgb(255, 146, 119);
   text-decoration: none;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 0 rgba(85, 85, 85,.55);
   letter-spacing: 0.5px;
 }
 
