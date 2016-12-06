@@ -132,6 +132,7 @@ main {
 .animation--writing--on main,
 .animation--contact--on main {
   opacity: 0;
+  pointer-events: none;
 }
 
 .dialog {
