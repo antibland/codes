@@ -23,7 +23,8 @@ body {
   line-height: 1.5;
   color: #555;
   background-color: #26252a;
-  font-family: 'Droid Sans', sans-serif;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
 }
 
 .animation--writing--on,
@@ -41,7 +42,7 @@ strong {
 textarea,
 [type=email],
 [type=text] {
-  font-family: 'Droid Sans', sans-serif;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 textarea, [type=email] {
