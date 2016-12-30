@@ -404,6 +404,7 @@ footer small {
   font-style: italic;
   padding: 0.8em;
   border-radius: 4px;
+  letter-spacing: 1px;
 }
 
 @media screen and (min-width: 430px) {
@@ -525,6 +526,6 @@ footer small {
   }
 
   footer .bg:after {
-    animation: 60s move-background linear infinite;
+    animation: 75s move-background linear infinite;
   }
 }

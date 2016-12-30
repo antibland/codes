@@ -104,5 +104,7 @@
     btn.addEventListener("click", closeDialogHandler);
   });
 
+  document.querySelector("footer time").innerHTML = new Date().getFullYear();
+
   window.onload = init;
 }(window));
