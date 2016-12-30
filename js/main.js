@@ -90,8 +90,15 @@
     }
   };
 
+  function overlayClickHandler(e) {
+    if (dialog.getAttribute("aria-hidden") === "false" && e.target.nodeName === "BODY") {
+      closeDialogHandler();
+    }
+  }
+
   pencil.addEventListener("click", pencilClickHandler, false);
   email.addEventListener("click", emailClickHandler, false);
+  doc.querySelector("body").addEventListener("click", overlayClickHandler, false);
 
   [].forEach.call(close_dialog_btns, function(btn) {
     btn.addEventListener("click", closeDialogHandler);
