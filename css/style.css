@@ -258,6 +258,7 @@ main {
   transition: 0.5s;
   opacity: 0;
   transform: translateY(0.35em);
+  text-shadow: 1px 1px 0 rgb(255, 146, 119);
 }
 
 .on .hero h1 {
