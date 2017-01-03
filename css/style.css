@@ -486,16 +486,22 @@ footer small {
   .blocks {
     flex-direction: column;
     width: 15vw;
-    transition: 0.5s opacity;
+    transition: 0.5s opacity, 0.5s transform;
     opacity: 0;
   }
 
   .on .blocks {
     opacity: 1;
+    transform: translateX(0) scale(1);
   }
 
   .blocks--left {
     order: -2;
+    transform: translateX(-1em) scale(0.85);
+  }
+
+  .blocks--right {
+    transform: translateX(1em) scale(0.85);
   }
 
   .block {
