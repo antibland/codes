@@ -98,7 +98,10 @@
 
   pencil.addEventListener("click", pencilClickHandler, false);
   email.addEventListener("click", emailClickHandler, false);
-  doc.querySelector("body").addEventListener("click", overlayClickHandler, false);
+
+  ["click", "touchstart"].forEach(function(event_type) {
+    document.body.addEventListener(event_type, overlayClickHandler, false);
+  });
 
   [].forEach.call(close_dialog_btns, function(btn) {
     btn.addEventListener("click", closeDialogHandler);
