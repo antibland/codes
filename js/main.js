@@ -16,10 +16,12 @@
     document.querySelector("[data-section=" + section + "]").style.display = "none";
   }
 
-  function closeDialogHandler() {
+  function closeDialogHandler(evt) {
     var body = document.body;
     var success_msg = document.querySelector(".message-success");
     var success_props = {};
+
+    evt.preventDefault();
 
     success_props.style = window.getComputedStyle(success_msg);
     success_props.display = success_props.style.getPropertyValue("display");
@@ -85,14 +87,14 @@
          (body.classList.contains("animation--writing--on") ||
           body.classList.contains("animation--contact--on") ||
           location.hash === "#thanks")) {
-        closeDialogHandler();
+        closeDialogHandler(evt);
       }
     }
   };
 
-  function overlayClickHandler(e) {
-    if (dialog.getAttribute("aria-hidden") === "false" && e.target.nodeName === "BODY") {
-      closeDialogHandler();
+  function overlayClickHandler(evt) {
+    if (dialog.getAttribute("aria-hidden") === "false" && evt.target.nodeName === "BODY") {
+      closeDialogHandler(evt);
     }
   }
 
