@@ -13,10 +13,8 @@ gulp.task('build-css', function() {
       browsers: [
         '> 1%',
         'last 2 versions',
-        'firefox >= 4',
+        'firefox >= 40',
         'safari >= 7',
-        'IE 9',
-        'IE 10',
         'IE 11'
       ],
       cascade: false
