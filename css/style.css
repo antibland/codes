@@ -76,7 +76,7 @@ ul {
 }
 
 .content-wrapper:target~main {
-  opacity: .2;
+  opacity: .15;
   transform: scale(.5, .5);
 }
 
@@ -126,12 +126,6 @@ ul {
   width: calc(100% / 3);
 }
 
-@media screen and (max-width: 40em) {
-  .content-wrapper .multi-column-list li {
-    width: 50%;
-  }
-}
-
 .content {
   color: white;
   max-width: 600px;
@@ -141,16 +135,10 @@ ul {
   -webkit-overflow-scrolling: touch;
 }
 
-@media screen and (max-width: 40em) {
-  .content {
-    padding: 0 1.5em;
-  }
-}
-
 .back-button {
   color: white;
-  width: 5em;
-  height: 2em;
+  width: 5.3em;
+  height: 2.2em;
   position: absolute;
   top: 100px;
   left: 32px;
@@ -226,15 +214,15 @@ button {
   display: grid;
   grid-template-rows: repeat(8, 1fr);
   grid-template-columns: repeat(12, 1fr);
-  grid-gap: 8px;
   width: 100%;
   max-width: 46.9em;
   max-height: 34em;
+  min-height: 23em;
   margin: 0 auto;
 }
 
 .grid:hover .item:not(:hover) {
-  opacity: 0.5;
+  opacity: .5;
 }
 
 .item {
@@ -249,13 +237,8 @@ button {
   transition: all ease-in-out 300ms;
   position: relative;
   z-index: 10;
-  will-change: transform;
 }
 
-.item:hover,
-.item:focus {
-  transform: scale(1.015, 1.015);
-}
 
 .item img {
   display: block;
@@ -263,7 +246,7 @@ button {
 }
 
 .item.about {
-  grid-row: span 8;
+  grid-row: span 7;
   grid-column: span 6;
   background-repeat: no-repeat;
   background-size: cover;
@@ -271,17 +254,6 @@ button {
   background-color: transparent;
   background-image: url("/img/me.jpg");
   background-image: -webkit-image-set(url("/img/me.jpg") 1x, url("/img/me@2x.jpg") 2x);
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min--moz-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2 / 1),
-only screen and (min-device-pixel-ratio: 2),
-only screen and (min-resolution: 192dpi),
-only screen and (min-resolution: 2dppx) {
-  .item.about {
-    background-image: url("/img/me@2x.jpg");
-  }
 }
 
 .item.work {
@@ -310,38 +282,33 @@ only screen and (min-resolution: 2dppx) {
 
 .item:hover {
   color: white;
-  text-shadow: 0 0 4px rgba(0, 0, 0, 0.85);
 }
 
-@media screen and (max-width: 50em) {
-  .item {
-    grid-row: span 3 !important;
-    grid-column: span 6 !important;
-  }
-  .item.contact {
-    grid-column: span 12 !important;
-    grid-row: span 2 !important;
-  }
-}
-
-footer {
+.social {
+  grid-row: span 1;
+  grid-column: span 6;
   margin-bottom: 1em;
   z-index: 3;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
 }
 
-footer svg {
+.social svg {
   max-width: 100%;
   max-height: 30px;
 }
 
-footer ul {
+.social ul {
   display: flex;
   justify-content: center;
   padding: 0;
   margin: 0;
 }
 
-footer a {
+.social a {
   color: white;
   width: 2em;
   display: inline-block;
@@ -349,10 +316,42 @@ footer a {
   transition: 0.5s color;
 }
 
-footer a:hover {
+.social a:hover {
   color: #eac4d5;
 }
 
-footer span {
+.social span {
   visibility: hidden;
+}
+
+@media screen and (max-width: 50em) {
+  .item, .social {
+    grid-row: span 3 !important;
+    grid-column: span 6 !important;
+  }
+
+  .social a {
+    margin: 0 .4em;
+  }
+}
+
+@media screen and (max-width: 40em) {
+  .content-wrapper .multi-column-list li {
+    width: 50%;
+  }
+
+  .content {
+    padding: 0 1.5em;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2 / 1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+  .item.about {
+    background-image: url("/img/me@2x.jpg");
+  }
 }
