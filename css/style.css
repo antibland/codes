@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+:root {
+  --mint: #d6eadf;
+  --aqua: #95b8d1;
+  --black: #353535;
+  --bluish: #809bce;
+  --pink: #eac4d5;
+  --text-color: #c4c4c4;
+}
+
 html,
 body {
   margin: 0;
@@ -12,9 +21,9 @@ body {
 }
 
 body {
-  background: #353535;
+  background: var(--black);
   background-image: url('/img/bg-square.png');
-  color: #c4c4c4;
+  color: var(--text-color);
   font-family: "Raleway", sans-serif;
   font-size: 1.2rem;
   line-height: 1.45;
@@ -55,7 +64,7 @@ header h1 {
   justify-content: space-between;
   font-size: 80%;
   padding: 1em 1em 0;
-  color: #d6eadf;
+  color: var(--mint);
 }
 
 header span {
@@ -263,11 +272,11 @@ button {
   cursor: pointer;
   appearance: none;
   transition: .6s background-color;
-  background-color: #c4c4c4;
+  background-color: var(--text-color);
   border-radius: 4px;
   text-indent: 0;
   display: inline-block;
-  color: #353535;
+  color: var(--black);
   font-size: .9em;
   line-height: 2;
   font-weight: 700;
@@ -286,8 +295,7 @@ button {
 
 .item {
   outline: none;
-  background: #f96855;
-  color: #353535;
+  color: var(--black);
   text-shadow: 0 1px 1px rgba(255, 255, 255, .75);
   font-weight: 700;
   display: flex;
@@ -323,25 +331,25 @@ button {
 .item.work {
   grid-row: span 5;
   grid-column: span 6;
-  background-color: #d6eadf;
+  background-color: var(--mint);
 }
 
 .item.hobbies {
   grid-row: span 1;
   grid-column: span 3;
-  background-color: #95b8d1;
+  background-color: var(--aqua);
 }
 
 .item.skills {
   grid-row: span 3;
   grid-column: span 3;
-  background-color: #809bce;
+  background-color: var(--bluish);
 }
 
 .item.contact {
   grid-row: span 2;
   grid-column: span 3;
-  background-color: #eac4d5;
+  background-color: var(--pink);
 }
 
 .social {
@@ -376,8 +384,10 @@ button {
   transition: .5s color;
 }
 
-.social a:hover {
-  color: #eac4d5;
+.social a:hover,
+.social a:focus {
+  color: var(--pink);
+  outline: none;
 }
 
 .social span {
