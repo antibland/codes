@@ -392,17 +392,6 @@ button {
   }
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min--moz-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2 / 1),
-only screen and (min-device-pixel-ratio: 2),
-only screen and (min-resolution: 192dpi),
-only screen and (min-resolution: 2dppx) {
-  .item.about {
-    background-image: url("/img/me@2x.jpg");
-  }
-}
-
 @supports(display: grid) {
   .grid {
     padding: 2% 0;
@@ -427,5 +416,16 @@ only screen and (min-resolution: 2dppx) {
   .item.about span {
     visibility: hidden;
     opacity: 0;
+  }
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min--moz-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2 / 1),
+  only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
+    .item.about {
+      background-image: url("/img/me@2x.jpg");
+    }
   }
 }
