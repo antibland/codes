@@ -13,6 +13,7 @@ body {
 
 body {
   background: #353535;
+  background-image: url('/img/bg-square.png');
   color: #c4c4c4;
   font-family: "Raleway", sans-serif;
   font-size: 1.2rem;
