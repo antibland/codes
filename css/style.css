@@ -21,9 +21,7 @@ body {
 }
 
 body {
-  background: var(--black);
   background-image: url('/img/bg-square.png');
-  color: var(--text-color);
   font-family: "Raleway", sans-serif;
   font-size: 1.2rem;
   line-height: 1.45;
@@ -31,6 +29,8 @@ body {
   min-height: 100vh;
   flex-direction: column;
   max-width: 100%;
+  background-color: var(--black);
+  color: var(--text-color);
 }
 
 body>section {
@@ -461,5 +461,55 @@ button {
     .item.about {
       background-image: url("/img/me@2x.jpg");
     }
+  }
+}
+
+@supports not(background-color: var(--black)) {
+  /* text-color */
+
+  body, button {
+    color: #c4c4c4;
+  }
+
+  /* black */
+
+  body {
+    background-color: #353535;
+  }
+
+  .item {
+    color: #353535;
+  }
+
+  button {
+    color: #353535;
+  }
+
+  /* mint */
+
+  header h1 {
+    color: #d6eadf;
+  }
+
+  .item.work {
+    background-color: #d6eadf;
+  }
+
+  /* aqua */
+
+  .item.hobbies {
+    background-color: #95b8d1;
+  }
+
+  /* bluish */
+
+  .item.skills {
+    background-color: #809bce;
+  }
+
+  /* pink */
+
+  .item.contact {
+    background-color: #eac4d5;
   }
 }
