@@ -256,18 +256,10 @@ button {
 }
 
 .grid {
-  padding: 2% 0;
-  display: grid;
-  grid-template-rows: repeat(8, 1fr);
-  grid-template-columns: repeat(12, 1fr);
   width: 100%;
   max-width: 46.9em;
   min-height: 20em;
   margin: 0 auto;
-}
-
-.grid:hover .item:not(:hover) {
-  opacity: .5;
 }
 
 .item {
@@ -282,8 +274,8 @@ button {
   transition: all ease-in-out 300ms;
   position: relative;
   z-index: 10;
+  height: calc(100% / 6);
 }
-
 
 .item img {
   display: block;
@@ -296,9 +288,7 @@ button {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom center;
-  background-color: transparent;
-  background-image: url("/img/me.jpg");
-  background-image: -webkit-image-set(url("/img/me.jpg") 1x, url("/img/me@2x.jpg") 2x);
+  background-color: silver;
 }
 
 .item.work {
@@ -325,7 +315,8 @@ button {
   background-color: #eac4d5;
 }
 
-.item:hover {
+.item:hover,
+.item:focus {
   color: white;
 }
 
@@ -409,5 +400,32 @@ only screen and (min-resolution: 192dpi),
 only screen and (min-resolution: 2dppx) {
   .item.about {
     background-image: url("/img/me@2x.jpg");
+  }
+}
+
+@supports(display: grid) {
+  .grid {
+    padding: 2% 0;
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .grid:hover .item:not(:hover) {
+    opacity: .5;
+  }
+
+  .item {
+    height: auto;
+  }
+
+  .item.about {
+    background-image: url("/img/me.jpg");
+    background-image: -webkit-image-set(url("/img/me.jpg") 1x, url("/img/me@2x.jpg") 2x);
+  }
+
+  .item.about span {
+    visibility: hidden;
+    opacity: 0;
   }
 }
