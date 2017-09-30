@@ -58,6 +58,10 @@ header h1 {
   color: #d6eadf;
 }
 
+header span {
+  text-shadow: 0 1px 0 rgba(234, 196, 213, 0.75);
+}
+
 ul {
   list-style: none;
 }
@@ -98,22 +102,16 @@ ul {
 }
 
 .content-wrapper ul {
-  margin: 0 0 0 0.75em;
+  margin: 0px 0 0 45px;
   padding: 0;
 }
 
 .content-wrapper ul.standard-list {
   list-style: square;
-  padding-left: 0.75em;
 }
 
 .content-wrapper ul.standard-list li {
   margin-bottom: 0.5em;
-}
-
-.content-wrapper form {
-  width: calc(100% - 1.5em);
-  margin: 0 auto;
 }
 
 .content-wrapper a:link,
@@ -126,6 +124,7 @@ ul {
   display: flex;
   flex-wrap: wrap;
   line-height: 1.8;
+  margin-left: 24px;
 }
 
 .content-wrapper .multi-column-list li {
@@ -142,9 +141,17 @@ ul {
   -webkit-overflow-scrolling: touch;
 }
 
+.content > * {
+  padding: 0px 26px;
+}
+
 .content h1 {
   position: relative;
   padding-left: 0.5em;
+}
+
+.content dl {
+  margin-left: 19px;
 }
 
 .content h1::before,
