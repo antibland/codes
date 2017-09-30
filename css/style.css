@@ -59,7 +59,7 @@ header h1 {
 }
 
 header span {
-  text-shadow: 0 1px 0 rgba(234, 196, 213, 0.75);
+  text-shadow: 0 1px 0 rgba(234, 196, 213, .75);
 }
 
 ul {
@@ -111,7 +111,7 @@ ul {
 }
 
 .content-wrapper ul.standard-list li {
-  margin-bottom: 0.5em;
+  margin-bottom: .5em;
 }
 
 .content-wrapper a:link,
@@ -137,7 +137,7 @@ ul {
   max-width: 600px;
   max-height: 50vh;
   overflow-y: auto;
-  padding-right: 0.75em;
+  padding-right: .75em;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -147,7 +147,7 @@ ul {
 
 .content h1 {
   position: relative;
-  padding-left: 0.5em;
+  padding-left: .5em;
 }
 
 .content dl {
@@ -173,7 +173,29 @@ ul {
 .content h1::after,
 .item span::after {
   content: '>';
-  padding-left: 0.3em;
+  padding-left: .3em;
+}
+
+.item span::before,
+.item span::after {
+  transition: transform .2s ease-in-out .1s, opacity .2s ease-in-out .1s;
+  opacity: 0;
+}
+
+.item span::before {
+  transform: translate(-100%, -100%);
+}
+
+.item span::after {
+  transform: translate(100%, 100%);
+}
+
+.item:focus span::before,
+.item:focus span::after,
+.item:hover span::before,
+.item:hover span::after {
+ transform: translate(0, -50%);
+ opacity: 1;
 }
 
 .item span::before {
@@ -201,7 +223,7 @@ ul {
 }
 
 .back-button .text {
-  margin-left: 0.5em;
+  margin-left: .5em;
 }
 
 main {
@@ -221,8 +243,8 @@ main:target {
 textarea,
 [type=email] {
   width: 100%;
-  padding: 0.25em 0.5em;
-  font-size: 0.9em;
+  padding: .25em .5em;
+  font-size: .9em;
   border-radius: 4px;
   border: none;
 }
@@ -232,7 +254,7 @@ textarea,
 }
 
 textarea {
-  margin-bottom: 0.5em;
+  margin-bottom: .5em;
 }
 
 button {
@@ -266,6 +288,7 @@ button {
   outline: none;
   background: #f96855;
   color: #353535;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, .75);
   font-weight: 700;
   display: flex;
   justify-content: center;
@@ -275,6 +298,12 @@ button {
   position: relative;
   z-index: 10;
   height: calc(100% / 6);
+}
+
+.item:hover,
+.item:focus {
+  color: white;
+  text-shadow: 0 1px 1px rgba(0,0,0,.75);
 }
 
 .item img {
@@ -315,11 +344,6 @@ button {
   background-color: #eac4d5;
 }
 
-.item:hover,
-.item:focus {
-  color: white;
-}
-
 .social {
   grid-row: span 1;
   grid-column: span 6;
@@ -349,7 +373,7 @@ button {
   width: 2em;
   display: inline-block;
   margin: 0 1em;
-  transition: 0.5s color;
+  transition: .5s color;
 }
 
 .social a:hover {
@@ -384,7 +408,7 @@ button {
   }
 
   .content h1 {
-    margin-top: 0.5em;
+    margin-top: .5em;
   }
 
   .content-wrapper {
@@ -401,7 +425,7 @@ button {
   }
 
   .grid:hover .item:not(:hover) {
-    opacity: .5;
+    opacity: .7;
   }
 
   .item {
