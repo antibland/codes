@@ -185,6 +185,11 @@ ul {
   padding-left: .3em;
 }
 
+#thanks h1::before,
+#thanks h1::after {
+  content: normal;
+}
+
 .item span::before,
 .item span::after {
   transition: transform .2s ease-in-out .1s, opacity .2s ease-in-out .1s;
