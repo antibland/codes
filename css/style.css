@@ -1,3 +1,10 @@
+@keyframes load_logo {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 *,
  :after,
  :before {
@@ -11,6 +18,7 @@
   --bluish: #809bce;
   --pink: #eac4d5;
   --text-color: #c4c4c4;
+  --logo-width: 75px;
 }
 
 html,
@@ -42,6 +50,17 @@ a:visited {
   text-decoration: none;
 }
 
+.svg-symbols {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+}
+
 svg {
   fill: currentColor;
 }
@@ -59,16 +78,36 @@ h2 {
 }
 
 header h1 {
-  margin: .5em 0 .3em;
-  display: flex;
-  justify-content: space-between;
-  font-size: 80%;
-  padding: 1em 1em 0;
-  color: var(--mint);
+  margin: .35em 0 0;
+  text-align: center;
+}
+
+header .logo {
+  max-width: var(--logo-width);
+}
+
+@supports(animation-name: load_logo) {
+  header .logo {
+    opacity: 0;
+    transform: translateY(-15px);
+    animation: load_logo .5s forwards .3s;
+  }
 }
 
 header span {
-  text-shadow: 0 1px 0 rgba(234, 196, 213, .75);
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  height: 1px;
+  overflow: hidden;
+}
+
+header {
+  transition: 0.5s opacity;
+}
+
+.content-wrapper:target ~ header {
+  opacity: .3;
 }
 
 ul {
@@ -433,7 +472,7 @@ button {
 
 @supports(display: grid) {
   .grid {
-    padding: 2% 0;
+    padding: 0 0 2%;
     display: grid;
     grid-template-rows: repeat(8, 1fr);
     grid-template-columns: repeat(12, 1fr);
@@ -470,6 +509,12 @@ button {
 }
 
 @supports not(background-color: var(--black)) {
+  /* logo */
+
+  header .logo {
+    max-width: 75px;
+  }
+
   /* text-color */
 
   body, button {
