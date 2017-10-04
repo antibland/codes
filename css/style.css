@@ -99,6 +99,7 @@ header span {
   visibility: hidden;
   opacity: 0;
   height: 1px;
+  width: 1px;
   overflow: hidden;
 }
 
