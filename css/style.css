@@ -77,6 +77,18 @@ h2 {
   font-size: 2rem;
 }
 
+ul {
+  list-style: none;
+}
+
+/*
+  * header
+*/
+
+header {
+  transition: 0.5s opacity;
+}
+
 header h1 {
   margin: .35em 0 0;
   text-align: center;
@@ -103,16 +115,8 @@ header span {
   overflow: hidden;
 }
 
-header {
-  transition: 0.5s opacity;
-}
-
 .content-wrapper:target ~ header {
   opacity: .3;
-}
-
-ul {
-  list-style: none;
 }
 
 .content-wrapper {
@@ -151,7 +155,7 @@ ul {
 }
 
 .content-wrapper ul {
-  margin: 0px 0 0 45px;
+  margin: 0 0 0 45px;
   padding: 0;
 }
 
@@ -191,7 +195,7 @@ ul {
 }
 
 .content > * {
-  padding: 0px 26px;
+  padding: 0 26px;
 }
 
 .content h1 {
