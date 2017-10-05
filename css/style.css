@@ -19,6 +19,8 @@
   --pink: #eac4d5;
   --text-color: #c4c4c4;
   --logo-width: 75px;
+  --logo-height: 77px;
+  --logo-color: white;
 }
 
 html,
@@ -61,6 +63,11 @@ a:visited {
   width: 1px !important;
 }
 
+.svg-symbol-logo {
+  width: 75px;
+  height: 77px;
+}
+
 svg {
   fill: currentColor;
 }
@@ -96,6 +103,8 @@ header h1 {
 
 header .logo {
   max-width: var(--logo-width);
+  max-height: var(--logo-height);
+  color: var(--logo-color);
 }
 
 @supports(animation-name: load_logo) {
@@ -518,6 +527,8 @@ button {
 
   header .logo {
     max-width: 75px;
+    max-height: 77px;
+    color: white;
   }
 
   /* text-color */
