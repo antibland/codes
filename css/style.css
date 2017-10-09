@@ -12,12 +12,12 @@
 }
 
 :root {
-  --mint: #d6eadf;
-  --aqua: #95b8d1;
-  --black: #353535;
-  --bluish: #809bce;
-  --pink: #eac4d5;
-  --text-color: #c4c4c4;
+  --mint: hsl(147, 32%, 88%);
+  --aqua: hsl(205, 39%, 70%);
+  --black: hsl(0, 0%, 21%);
+  --bluish: hsl(219, 44%, 65%);
+  --pink: hsl(333, 47%, 84%);
+  --text-color: hsl(0, 0%, 77%);
   --logo-width: 75px;
   --logo-height: 77px;
   --logo-color: white;
@@ -354,7 +354,7 @@ button {
 .item {
   outline: none;
   color: var(--black);
-  text-shadow: 0 1px 1px rgba(255, 255, 255, .75);
+  text-shadow: 0 1px 1px hsla(0, 0%, 100%, 0.75);
   font-weight: 700;
   display: flex;
   justify-content: center;
@@ -369,7 +369,7 @@ button {
 .item:hover,
 .item:focus {
   color: white;
-  text-shadow: 0 1px 1px rgba(0,0,0,.75);
+  text-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.75);
 }
 
 .item img {
@@ -416,15 +416,18 @@ button {
   margin-bottom: 1em;
   z-index: 3;
   display: flex;
-  margin: 0;
   padding: 0;
   justify-content: center;
   align-items: center;
+  max-width: 40vmin;
+  margin: 0 auto;
 }
 
 .social svg {
   max-width: 100%;
   max-height: 30px;
+  margin-top: 6px;
+  transition: 0.3s transform;
 }
 
 .social ul {
@@ -436,10 +439,9 @@ button {
 
 .social a {
   color: white;
-  width: 2em;
   display: inline-block;
-  margin: 0 1em;
   transition: .5s color;
+  position: relative;
 }
 
 .social a:hover,
@@ -450,16 +452,32 @@ button {
 
 .social span {
   visibility: hidden;
+  position: absolute;
+  left: 50%;
+  top: 12px;
+  opacity: 0;
+  transition: 0.3s transform, 0.3s opacity;
+  transform: translate3d(-50%, 130%, 0);
+  font-size: 75%;
+  text-transform: lowercase;
+}
+
+.social a:hover span,
+.social a:focus span {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 100%);
+}
+
+.social a:hover svg,
+.social a:focus svg {
+ transform: translateY(-.4em);
 }
 
 @media screen and (max-width: 50em) {
   .item, .social {
     grid-row: span 3 !important;
     grid-column: span 6 !important;
-  }
-
-  .social a {
-    margin: 0 .4em;
   }
 }
 
@@ -534,48 +552,48 @@ button {
   /* text-color */
 
   body, button {
-    color: #c4c4c4;
+    color: hsl(0, 0%, 77%);
   }
 
   /* black */
 
   body {
-    background-color: #353535;
+    background-color: hsl(0, 0%, 21%);
   }
 
   .item {
-    color: #353535;
+    color: hsl(0, 0%, 21%);
   }
 
   button {
-    color: #353535;
+    color: hsl(0, 0%, 21%);
   }
 
   /* mint */
 
   header h1 {
-    color: #d6eadf;
+    color: hsl(147, 32%, 88%);
   }
 
   .item.work {
-    background-color: #d6eadf;
+    background-color: hsl(147, 32%, 88%);
   }
 
   /* aqua */
 
   .item.hobbies {
-    background-color: #95b8d1;
+    background-color: hsl(205, 39%, 70%);
   }
 
   /* bluish */
 
   .item.skills {
-    background-color: #809bce;
+    background-color: hsl(219, 44%, 65%);
   }
 
   /* pink */
 
   .item.contact {
-    background-color: #eac4d5;
+    background-color: hsl(333, 47%, 84%);
   }
 }
