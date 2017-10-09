@@ -413,7 +413,6 @@ button {
 .social {
   grid-row: span 1;
   grid-column: span 6;
-  margin-bottom: 1em;
   z-index: 3;
   display: flex;
   padding: 0;
@@ -437,6 +436,10 @@ button {
   margin: 0;
 }
 
+.social li {
+  flex: 1;
+}
+
 .social a {
   color: white;
   display: inline-block;
@@ -455,10 +458,10 @@ button {
   position: absolute;
   left: 50%;
   top: 12px;
+  font-size: 14px;
   opacity: 0;
   transition: 0.3s transform, 0.3s opacity;
   transform: translate3d(-50%, 130%, 0);
-  font-size: 75%;
   text-transform: lowercase;
 }
 
