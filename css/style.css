@@ -302,7 +302,7 @@ main {
   transform-origin: center center;
 }
 
-main:target {
+body:target ~ main {
   opacity: 1;
   transform: scale(1, 1);
 }
