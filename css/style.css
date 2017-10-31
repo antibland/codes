@@ -32,9 +32,9 @@ body {
 
 body {
   background-image: url('/img/bg-square.png');
-  font-family: "Raleway", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.2rem;
-  line-height: 1.45;
+  line-height: 1.5;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
