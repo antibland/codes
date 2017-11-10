@@ -410,6 +410,7 @@ button {
   background-size: cover;
   background-position: bottom center;
   background-color: silver;
+  filter: contrast(1.05) brightness(1.2);
 }
 
 .item.work {
