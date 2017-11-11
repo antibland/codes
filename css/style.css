@@ -324,6 +324,12 @@ body:target ~ main {
   transition: all .5s ease-in-out;
 }
 
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--pink);
+}
+
 textarea:focus::placeholder,
 [type=email]:focus::placeholder {
   opacity: 0;
@@ -335,10 +341,11 @@ textarea,
   width: 100%;
   padding: .5em;
   font-size: .9em;
-  border: none;
   background-color: transparent;
   color: white;
-  border: 1px solid white;
+  border: none;
+  transition: 0.3s border;
+  border-bottom: 1px solid white;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
@@ -355,12 +362,12 @@ button {
   background: none;
   cursor: pointer;
   appearance: none;
-  transition: .6s background-color;
-  background-color: var(--text-color);
+  transition: .6s background-color, border, color;
+  border: 1px solid var(--pink);
   border-radius: 4px;
   text-indent: 0;
   display: inline-block;
-  color: var(--black);
+  color: white;
   font-size: .9em;
   line-height: 2;
   font-weight: 700;
@@ -368,6 +375,13 @@ button {
   text-decoration: none;
   letter-spacing: 1.3px;
   padding: .1em .5em;
+}
+
+button:hover,
+button:focus {
+  background-color: var(--pink);
+  color: var(--black);
+  border-color: white;
 }
 
 .grid {
@@ -604,7 +618,8 @@ button {
     color: hsl(0, 0%, 21%);
   }
 
-  button {
+  button:hover,
+  button:focus {
     color: hsl(0, 0%, 21%);
   }
 
@@ -633,6 +648,20 @@ button {
   /* pink */
 
   .item.contact {
+    background-color: hsl(333, 47%, 84%);
+  }
+
+  input:focus,
+  textarea:focus {
+    border-color: hsl(333, 47%, 84%);
+  }
+
+  button {
+    border: 1px solid hsl(333, 47%, 84%);
+  }
+
+  button:hover,
+  button:focus {
     background-color: hsl(333, 47%, 84%);
   }
 }
