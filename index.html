@@ -74,7 +74,7 @@
       <ul class="multi-column-list">
         <li>HTML</li>
         <li>CSS</li>
-        <li>JavaScript</li>
+        <li>JavaScript (ES6)</li>
         <li>Node</li>
         <li>Mongo</li>
         <li>Liquid</li>
@@ -181,6 +181,22 @@
 
       testWebP(notify);
     })();
+  </script>
+
+  <script src="/sw.js"></script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').then(function(registration) {
+          // Registration was successful
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+          // registration failed :(
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
   </script>
 
 </body>
