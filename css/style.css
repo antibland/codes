@@ -84,11 +84,11 @@ h1, h2, .item {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.7rem;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.85rem;
 }
 
 ul {
@@ -206,7 +206,8 @@ header span {
   max-width: 600px;
   max-height: 50vh;
   overflow-y: auto;
-  padding-right: .75em;
+  padding: 0 .75em 1em;
+  background-color: rgba(255, 255, 255, .08);
   -webkit-overflow-scrolling: touch;
 }
 
@@ -221,6 +222,17 @@ header span {
 
 .content dl {
   margin-left: 19px;
+}
+
+.content dt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.publication-name {
+  font-size: 80%;
+  font-weight: 300;
 }
 
 .content h1::before,
@@ -399,7 +411,7 @@ button:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.3em;
+  font-size: 1.25em;
   transition: all ease-in-out 300ms;
   position: relative;
   z-index: 10;
@@ -531,7 +543,7 @@ button:focus {
   }
 
   .content {
-    padding: 0 1.5em;
+    padding: 0 1.5em 1em;
     max-width: 100%;
     margin-top: 160px;
     max-height: calc(100% - 195px);
@@ -543,6 +555,15 @@ button:focus {
 
   .content-wrapper {
     align-items: flex-start;
+  }
+
+  .content dt {
+    display: block;
+  }
+
+  .publication-name {
+    display: block;
+    padding-top: 1em;
   }
 }
 
