@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "python -m SimpleHTTPServer | gulp"
+    "start": "gulp"
   },
   "repository": {
     "type": "git",
