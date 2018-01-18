@@ -3,6 +3,7 @@ var urlsToCache = [
   '/',
   '/index.html',
   '/prod/style.css',
+  '/favicon.ico',
   '/img/bg-square.png',
   '/img/bg-square.webp',
   '/img/me.jpg',
@@ -10,6 +11,20 @@ var urlsToCache = [
   '/img/me@2x.jpg',
   '/img/me@2x.webp'
 ];
+
+self.addEventListener('activate', function(event) {
+  var cacheWhitelist = [CACHE_NAME];
+
+  event.waitUntil(
+    caches.keys().then(function(keyList) {
+      return Promise.all(keyList.map(function(key) {
+        if (cacheWhitelist.indexOf(key) === -1) {
+          return caches.delete(key);
+        }
+      }));
+    })
+  );
+});
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
