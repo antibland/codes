@@ -207,7 +207,7 @@ header span {
 .content {
   color: white;
   max-width: 600px;
-  max-height: 50vh;
+  max-height: 57vh;
   overflow-y: auto;
   padding: 0 .75em 1em;
   background-color: rgba(255, 255, 255, .08);
@@ -221,6 +221,7 @@ header span {
 .content h1 {
   position: relative;
   padding-left: .5em;
+  margin-top: .5em;
 }
 
 .content dl {
@@ -332,6 +333,45 @@ body:target ~ main {
 /*
   * Forms
 */
+label {
+  margin-bottom: 10px;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.styled-select {
+  background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+  height: 29px;
+  overflow: hidden;
+  width: 240px;
+  margin-bottom: 20px;
+}
+
+.styled-select select {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  height: 29px;
+  padding: 5px;
+  width: 268px;
+}
+
+.styled-select.slate {
+  background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;
+  height: 34px;
+  width: 240px;
+}
+
+.styled-select.slate select {
+  border: 1px solid #ccc;
+  font-size: 16px;
+  height: 34px;
+  width: 268px;
+}
+
+.slate   { background-color: #ddd; }
+.slate select   { color: #fff; }
 
 ::placeholder {
   color: white;

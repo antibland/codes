@@ -22,7 +22,7 @@
   <section id="about" class="content-wrapper" aria-hidden="true">
     <div class="content">
       <h1>About Me</h1>
-      <p>Andy Hoffman is a full-stack web developer with almost two decades of experience. He's removed so many IE bugs, co-workers have called him &ldquo;The Exterminator&rdquo;. Here are a few of his beliefs:</p>
+      <p>Andy Hoffman is a full-stack web developer and consultant with almost two decades of experience. He stays informed of web trends and industry-wide best practices and has trained large teams to write better code for Fortune 500 companies. Here are a few of his beliefs:</p>
       <ul class="standard-list">
         <li>Build tools like <em>Gulp</em> , <em>Webpack</em> and <em>Grunt</em> are essential for sane modern web development</li>
         <li>Helping others is helping yourself</li>
@@ -78,7 +78,7 @@
   <section id="hobbies" class="content-wrapper" aria-hidden="true">
     <div class="content">
       <h1>Hobbies</h1>
-      <p>I don't code all day, every day. I play the drums, work diligently on my jump shot, and ride my bike around Portland. Now, according to <a rel="noopener" href="https://www.duolingo.com/">duoLingo</a>, the language learning app, I've achieved 70% fluency in German. Even though that is probably marketing hyperbole, it's an effective motivational tool.</p>
+      <p>I don't code all day, every day. I play the drums, work diligently on my jump shot and ride my trusty bike around Portland. According to <a rel="noopener" href="https://www.duolingo.com/">duoLingo</a>, the language learning app, I've achieved 70% fluency in German 🇩🇪. Even though that is probably marketing hyperbole, it's an effective motivational tool. <span style="cursor: help" title="I'm still learning!" lang="de">Ich lerne immernoch!</span></p>
     </div>
   </section>
 
@@ -107,6 +107,14 @@
       <h1>Say Hello</h1>
 
       <form method="POST" action="//formspree.io/antibland@gmail.com">
+        <label for="type">How can I help?</label>
+        <div class="styled-select slate">
+          <select id="type" name="type">
+            <option value="Project">Project</option>
+            <option value="Consulting">Consulting</option>
+            <option value="General">General Question</option>
+          </select>
+        </div>
         <input aria-label="email" required autocapitalize="none" type="email" name="email" placeholder="Email">
         <textarea aria-label="message" required name="message" placeholder="Message"></textarea>
         <button class="button--serious" type="submit">Send</button>
