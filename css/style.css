@@ -349,6 +349,7 @@ label {
   height: 29px;
   overflow: hidden;
   width: 240px;
+  max-width: 100%;
   margin-bottom: 20px;
 }
 
@@ -414,6 +415,7 @@ textarea,
 
 textarea {
   margin-bottom: .5em;
+  height: 42px;
 }
 
 button {
