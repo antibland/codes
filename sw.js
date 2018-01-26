@@ -1,8 +1,9 @@
-var CACHE_NAME = 'andyhoffman.codes-v9';
+var CACHE_NAME = 'andyhoffman.codes-v10';
 var urlsToCache = [
   '/',
   '/index.html',
   '/prod/style.css',
+  '/js/zoom-vanilla.min.js',
   '/favicon.ico',
   '/svg-defs.svg',
   '/img/bg-square.png',

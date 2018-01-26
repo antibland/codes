@@ -1,3 +1,39 @@
+/*
+ * Image zoom (3rd party)
+*/
+
+img[data-action="zoom"] {
+  cursor: zoom-in;
+}
+.zoom-img,
+.zoom-img-wrap {
+  position: relative;
+  z-index: 666;
+  transition: all 300ms;
+}
+img.zoom-img {
+  cursor: zoom-out;
+}
+.zoom-overlay {
+  cursor: zoom-out;
+  z-index: 420;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 300ms;
+}
+.zoom-overlay-open .zoom-overlay {
+  opacity: 1;
+}
+
+/*
+* Site styles begin
+*/
+
 @keyframes load_logo {
   to {
     transform: translateY(0);
@@ -337,6 +373,7 @@ body:target ~ main {
 /*
   * Forms
 */
+
 label {
   margin-bottom: 10px;
   display: inline-block;
@@ -579,6 +616,25 @@ button:focus {
  transform: translateY(-.4em);
 }
 
+/*
+  * Misc
+*/
+
+.project-images {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project-images figure {
+  margin-left: auto;
+  margin-right: auto;
+  flex: 1;
+}
+
+img[data-action="zoom"] {
+  max-width: 200px;
+}
+
 @media screen and (max-width: 50em) {
   .item, .social {
     grid-row: span 3 !important;
@@ -587,6 +643,21 @@ button:focus {
 }
 
 @media screen and (max-width: 40em) {
+  .project-images {
+    justify-content: center;
+  }
+
+  .project-images figure {
+    margin-left: 0;
+    margin-right: 0;
+    flex: none;
+  }
+
+  img[data-action="zoom"] {
+    width: 300px;
+    max-width: calc(100vw - 100px);
+  }
+
   .content-wrapper .multi-column-list li {
     width: 50%;
   }
