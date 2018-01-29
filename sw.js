@@ -1,4 +1,4 @@
-var CACHE_NAME = 'andyhoffman.codes-v15';
+var CACHE_NAME = 'andyhoffman.codes-v16';
 var urlsToCache = [
   '/',
   '/index.html',
