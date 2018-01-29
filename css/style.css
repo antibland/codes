@@ -91,6 +91,7 @@ h1 {
 }
 
 h2 {
+  line-height: 1.2em;
   font-size: 1.85rem;
 }
 
@@ -170,7 +171,9 @@ header span {
 }
 
 .content-wrapper dd {
-  margin: 1em 0 1.5em .75em;
+  margin: 1em 0 1.5em 0;
+  border-left: 1px solid rgba(255, 255, 255, .35);
+  padding-left: .75em;
 }
 
 .content-wrapper ul {
