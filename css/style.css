@@ -180,6 +180,7 @@ header span {
 
 .content-wrapper ul.standard-list {
   list-style: square;
+  margin-bottom: 2em;
 }
 
 .content-wrapper ul.standard-list li {
@@ -206,6 +207,7 @@ header span {
 
 .content {
   color: white;
+  position: relative;
   max-width: 600px;
   max-height: 57vh;
   overflow-y: auto;
@@ -222,10 +224,15 @@ header span {
   position: relative;
   padding-left: .5em;
   margin-top: .5em;
+  margin-bottom: .5em;
 }
 
 .content h2 {
   margin-bottom: .5em;
+}
+
+.content h2:first-of-type {
+  margin-top: 0;
 }
 
 .content dl {
@@ -262,12 +269,20 @@ header span {
 .content h1::after,
 .item span::after {
   content: '>';
-  padding-left: .3em;
+  padding-left: .15em;
 }
 
 #thanks h1::before,
 #thanks h1::after {
   content: normal;
+}
+
+#thanks .content {
+  text-align: center;
+}
+
+#thanks .message-sent {
+  padding: 0;
 }
 
 .item span::before,
@@ -343,6 +358,7 @@ label {
   display: inline-block;
   font-size: 16px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .styled-select {
@@ -415,7 +431,7 @@ textarea,
 }
 
 textarea {
-  margin-bottom: .5em;
+  margin-bottom: 1em;
   height: 42px;
 }
 
@@ -444,6 +460,28 @@ button:focus {
   background-color: var(--pink);
   color: var(--black);
   border-color: white;
+}
+
+.schedule-link {
+  position: absolute;
+  top: 26px;
+  right: 0;
+  font-weight: bold;
+  width: 220px;
+  height: 61px;
+  display: flex;
+  border: none !important;
+  align-items: center;
+}
+
+.schedule-link svg {
+  width: 100%;
+  height: 100%;
+}
+
+.schedule-link .text {
+  white-space: nowrap;
+  padding-left: 10px;
 }
 
 .grid {
@@ -674,6 +712,12 @@ button:focus {
   .publication-name {
     display: block;
     padding-top: 1em;
+  }
+
+  .schedule-link {
+    position: relative;
+    margin-bottom: 1.5em;
+    margin-top: -1em;
   }
 }
 
