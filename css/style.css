@@ -271,8 +271,8 @@ header span {
 
 .content h1::after,
 .item span::after {
-  content: '>';
-  padding-left: .15em;
+  content: '/>';
+  padding-left: .2em;
 }
 
 #thanks h1::before,
@@ -307,7 +307,9 @@ header span {
 .item:focus span::before,
 .item:focus span::after,
 .item:hover span::before,
-.item:hover span::after {
+.item:hover span::after,
+.item:active span::before,
+.item:active span::after {
  transform: translate(0, -50%);
  opacity: 1;
 }
@@ -646,7 +648,8 @@ button:focus {
 }
 
 .project-image-link:focus .project-image-link-caption,
-.project-image-link:hover .project-image-link-caption {
+.project-image-link:hover .project-image-link-caption,
+.project-image-link:active .project-image-link-caption {
   transform: translateY(0);
 }
 
