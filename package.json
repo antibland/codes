@@ -18,10 +18,10 @@
   "homepage": "https://github.com/antibland/codes#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-clean-css": "^2.3.2",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-clean-css": "^4.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-util": "^3.0.7",
-    "gulp-watch": "^4.3.10"
+    "gulp-watch": "^5.0.1"
   }
 }
