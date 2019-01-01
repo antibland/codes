@@ -6,8 +6,8 @@
 }
 
 *,
- :after,
- :before {
+:after,
+:before {
   box-sizing: border-box;
 }
 
@@ -31,7 +31,8 @@ body {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.2rem;
   line-height: 1.5;
   display: flex;
@@ -46,14 +47,14 @@ body {
 }
 
 body.webp {
-  background-image: url('/img/bg-square.webp');
+  background-image: url("/img/bg-square.webp");
 }
 
 body.no-webp {
-  background-image: url('/img/bg-square.png');
+  background-image: url("/img/bg-square.png");
 }
 
-body>section {
+body > section {
   flex: 0;
 }
 
@@ -82,7 +83,9 @@ svg {
   fill: currentColor;
 }
 
-h1, h2, .item {
+h1,
+h2,
+.item {
   text-transform: lowercase;
 }
 
@@ -108,7 +111,7 @@ header {
 }
 
 header h1 {
-  margin: .35em 0 0;
+  margin: 0.35em 0 0;
   text-align: center;
 }
 
@@ -118,11 +121,11 @@ header .logo {
   color: var(--logo-color);
 }
 
-@supports(animation-name: load_logo) {
+@supports (animation-name: load_logo) {
   header .logo {
     opacity: 0;
     transform: translateY(-15px);
-    animation: load_logo .5s forwards .3s;
+    animation: load_logo 0.5s forwards 0.3s;
   }
 }
 
@@ -136,7 +139,7 @@ header span {
 }
 
 .content-wrapper:target ~ header {
-  opacity: .3;
+  opacity: 0.3;
 }
 
 .content-wrapper {
@@ -155,16 +158,16 @@ header span {
 
 .content-wrapper:target {
   visibility: visible;
-  opacity: .7;
+  opacity: 0.7;
   z-index: 3;
 }
 
-.content-wrapper:target~main {
-  opacity: .1;
-  transform: scale(.5, .5);
+.content-wrapper:target ~ main {
+  opacity: 0.1;
+  transform: scale(0.5, 0.5);
 }
 
-.content-wrapper:target~.back-button {
+.content-wrapper:target ~ .back-button {
   opacity: 1;
   visibility: visible;
   z-index: 3;
@@ -172,8 +175,8 @@ header span {
 
 .content-wrapper dd {
   margin: 1em 0 1.5em 0;
-  border-left: 1px solid rgba(255, 255, 255, .35);
-  padding-left: .75em;
+  border-left: 1px solid rgba(255, 255, 255, 0.35);
+  padding-left: 0.75em;
 }
 
 .content-wrapper ul {
@@ -187,7 +190,7 @@ header span {
 }
 
 .content-wrapper ul.standard-list li {
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 
 .content-wrapper a:link,
@@ -214,8 +217,8 @@ header span {
   max-width: 600px;
   max-height: 57vh;
   overflow-y: auto;
-  padding: 0 .75em 1em;
-  background-color: rgba(255, 255, 255, .08);
+  padding: 0 0.75em 1em;
+  background-color: rgba(255, 255, 255, 0.08);
   -webkit-overflow-scrolling: touch;
 }
 
@@ -225,13 +228,13 @@ header span {
 
 .content h1 {
   position: relative;
-  padding-left: .5em;
-  margin-top: .5em;
-  margin-bottom: .5em;
+  padding-left: 0.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .content h2 {
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 
 .content h2:first-of-type {
@@ -265,14 +268,14 @@ header span {
 }
 
 .content h1::before {
-  content: '<';
+  content: "<";
   left: 0;
 }
 
 .content h1::after,
 .item span::after {
-  content: '/>';
-  padding-left: .2em;
+  content: "/>";
+  padding-left: 0.2em;
 }
 
 #thanks h1::before,
@@ -292,7 +295,7 @@ header span {
 
 .item span::before,
 .item span::after {
-  transition: transform .2s ease-in-out .1s, opacity .2s ease-in-out .1s;
+  transition: transform 0.2s ease-in-out 0.1s, opacity 0.2s ease-in-out 0.1s;
   opacity: 0;
 }
 
@@ -310,12 +313,12 @@ header span {
 .item:hover span::after,
 .item:active span::before,
 .item:active span::after {
- transform: translate(0, -50%);
- opacity: 1;
+  transform: translate(0, -50%);
+  opacity: 1;
 }
 
 .item span::before {
-  content: '<';
+  content: "<";
   margin-left: -12px;
 }
 
@@ -331,15 +334,15 @@ header span {
   border-bottom: none;
   visibility: hidden;
   opacity: 0;
-  transition: .5s opacity ease-in .2s, .5s visibility ease-in .2s;
+  transition: 0.5s opacity ease-in 0.2s, 0.5s visibility ease-in 0.2s;
 }
 
-.back-button>* {
+.back-button > * {
   flex: 1;
 }
 
 .back-button .text {
-  margin-left: .5em;
+  margin-left: 0.5em;
 }
 
 main {
@@ -399,13 +402,17 @@ label {
   width: 268px;
 }
 
-.slate   { background-color: #ddd; }
-.slate select   { color: #fff; }
+.slate {
+  background-color: #ddd;
+}
+.slate select {
+  color: #fff;
+}
 
 ::placeholder {
   color: white;
-  opacity: .8;
-  transition: all .5s ease-in-out;
+  opacity: 0.8;
+  transition: all 0.5s ease-in-out;
 }
 
 input:focus,
@@ -415,25 +422,26 @@ textarea:focus {
 }
 
 textarea:focus::placeholder,
-[type=email]:focus::placeholder {
+[type="email"]:focus::placeholder {
   opacity: 0;
   transform: translateY(-5px);
 }
 
 textarea,
-[type=email] {
+[type="email"] {
   width: 100%;
-  padding: .5em;
-  font-size: .9em;
+  padding: 0.5em;
+  font-size: 0.9em;
   background-color: transparent;
   color: white;
   border: none;
   transition: 0.3s border;
   border-bottom: 1px solid white;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-[type=email] {
+[type="email"] {
   margin-bottom: 1em;
 }
 
@@ -447,19 +455,19 @@ button {
   background: none;
   cursor: pointer;
   appearance: none;
-  transition: .6s background-color, border, color;
+  transition: 0.6s background-color, border, color;
   border: 1px solid var(--pink);
   border-radius: 4px;
   text-indent: 0;
   display: inline-block;
   color: white;
-  font-size: .9em;
+  font-size: 0.9em;
   line-height: 2;
   font-weight: 700;
   font-style: normal;
   text-decoration: none;
   letter-spacing: 1.3px;
-  padding: .1em .5em;
+  padding: 0.1em 0.5em;
 }
 
 button:hover,
@@ -591,7 +599,7 @@ button:focus {
 .social a {
   color: white;
   display: inline-block;
-  transition: .5s color;
+  transition: 0.5s color;
   position: relative;
 }
 
@@ -611,6 +619,7 @@ button:focus {
   transition: 0.3s transform, 0.3s opacity;
   transform: translate3d(-50%, 130%, 0);
   text-transform: lowercase;
+  white-space: nowrap;
 }
 
 .social a:hover span,
@@ -622,7 +631,7 @@ button:focus {
 
 .social a:hover svg,
 .social a:focus svg {
- transform: translateY(-.4em);
+  transform: translateY(-0.4em);
 }
 
 /*
@@ -661,7 +670,7 @@ button:focus {
   background-color: var(--black);
   color: white;
   transform: translateY(50px);
-  transition: transform .3s;
+  transition: transform 0.3s;
   font-size: 1rem;
   text-align: center;
   padding: 10px 0;
@@ -672,7 +681,8 @@ button:focus {
 }
 
 @media screen and (max-width: 50em) {
-  .item, .social {
+  .item,
+  .social {
     grid-row: span 3 !important;
     grid-column: span 6 !important;
   }
@@ -706,7 +716,7 @@ button:focus {
   }
 
   .content h1 {
-    margin-top: .5em;
+    margin-top: 0.5em;
   }
 
   .content-wrapper {
@@ -729,7 +739,19 @@ button:focus {
   }
 }
 
-@supports(display: grid) {
+@media screen and (max-width: 30em) {
+  .social {
+    flex-direction: column;
+    margin: auto;
+  }
+
+  .social svg {
+    max-height: 25px;
+    margin-top: 13px;
+  }
+}
+
+@supports (display: grid) {
   .grid {
     padding: 0 0 2%;
     display: grid;
@@ -738,7 +760,7 @@ button:focus {
   }
 
   .grid:hover .item:not(:hover) {
-    opacity: .7;
+    opacity: 0.7;
   }
 
   .item {
@@ -747,12 +769,18 @@ button:focus {
 
   .webp .item.about {
     background-image: url("/img/me.webp");
-    background-image: -webkit-image-set(url("/img/me.webp") 1x, url("/img/me@2x.webp") 2x);
+    background-image: -webkit-image-set(
+      url("/img/me.webp") 1x,
+      url("/img/me@2x.webp") 2x
+    );
   }
 
   .no-webp .item.about {
     background-image: url("/img/me.jpg");
-    background-image: -webkit-image-set(url("/img/me.jpg") 1x, url("/img/me@2x.jpg") 2x);
+    background-image: -webkit-image-set(
+      url("/img/me.jpg") 1x,
+      url("/img/me@2x.jpg") 2x
+    );
   }
 
   .item.about span {
@@ -761,11 +789,11 @@ button:focus {
   }
 
   @media only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (min--moz-device-pixel-ratio: 2),
-  only screen and (-o-min-device-pixel-ratio: 2 / 1),
-  only screen and (min-device-pixel-ratio: 2),
-  only screen and (min-resolution: 192dpi),
-  only screen and (min-resolution: 2dppx) {
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2 / 1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
     .webp .item.about {
       background-image: url("/img/me@2x.webp");
     }
@@ -776,7 +804,7 @@ button:focus {
   }
 }
 
-@supports not(background-color: var(--black)) {
+@supports not (background-color: var(--black)) {
   /* logo */
 
   header .logo {
@@ -787,7 +815,8 @@ button:focus {
 
   /* text-color */
 
-  body, button {
+  body,
+  button {
     color: hsl(0, 0%, 77%);
   }
 
