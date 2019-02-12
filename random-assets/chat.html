@@ -15,8 +15,7 @@
   <script>
     function displayMessage(evt) {
       var message;
-      alert(evt.origin)
-      if (evt.origin !== "https://jsfiddle.net/") {
+      if (evt.origin !== "https://fiddle.jshell.net") {
         message = "You are not worthy";
       }
       else {
