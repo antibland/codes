@@ -10,21 +10,35 @@
     .chat-select {
       padding: 1em 1.5em 1em 1em;
     }
+
+    [data-chat-state="waiting"] {
+      display: none;
+    }
+
+    [data-chat-state="active"] {
+      display: block;
+    }
   </style>
 </head>
 
 <body>
-  <h1>Chat window</h1>
-  <select class="chat-select">
-    <option value="#">Select…</option>
-    <option value="closed">Chat is closed</option>
-    <option value="minimized">Chat is minimized</option>
-  </select>
+  <div class="chat-container" data-chat-state="waiting">
+    <h1>Chat is active</h1>
+    <select class="chat-select">
+      <option value="#">Select…</option>
+      <option value="closed">Chat is closed</option>
+      <option value="minimized">Chat is minimized</option>
+    </select>
 
-  <div id="received-message"></div>
+    <div id="received-message"></div>
+  </div>
   <script>
     var chatSelect = document.querySelector('.chat-select');
+    var chatContainer = document.querySelector('.chat-container');
     chatSelect.addEventListener("change", handleChange);
+    window.addEventListener("message", displayMessage, false);
+
+    /* Send message back to parent if domain matches second argument */
     function handleChange() {
       var selectedValue = this.value;
       if (selectedValue !== "#") {
@@ -32,25 +46,16 @@
       }
     }
 
+    /* Handle incoming message from parent */
     function displayMessage(evt) {
       var message;
       if (evt.origin !== "https://fiddle.jshell.net") {
-        message = "You are not worthy";
+        message = "Wrong domain. No messages for you!";
+        document.getElementById("received-message").innerHTML = message;
+      } else {
+        chatContainer.setAttribute("data-chat-state", "active");
       }
-      else {
-        message = `Message received from ${evt.origin}: ${evt.data}`;
-      }
-      document.getElementById("received-message").innerHTML = message;
     }
-
-    if (window.addEventListener) {
-      // For standards-compliant web browsers
-      window.addEventListener("message", displayMessage, false);
-    }
-    else {
-      window.attachEvent("onmessage", displayMessage);
-    }
-
   </script>
 </body>
 
