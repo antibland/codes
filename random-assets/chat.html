@@ -6,13 +6,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Chat Window</title>
+  <style>
+    .chat-select {
+      padding: 1em 1.5em 1em 1em;
+    }
+  </style>
 </head>
 
 <body>
-  <h1>Remote chat window</h1>
-  <div id="received-message"></div>
+  <h1>Chat window</h1>
+  <select class="chat-select">
+    <option value="#">Select…</option>
+    <option value="closed">Chat is closed</option>
+    <option value="minimized">Chat is minimized</option>
+  </select>
 
+  <div id="received-message"></div>
   <script>
+    var chatSelect = document.querySelector('.chat-select');
+    chatSelect.addEventListener("change", handleChange);
+    function handleChange() {
+      var selectedValue = this.value;
+      if (selectedValue !== "#") {
+        parent.postMessage(selectedValue, "https://fiddle.jshell.net");
+      }
+    }
+
     function displayMessage(evt) {
       var message;
       if (evt.origin !== "https://fiddle.jshell.net") {
