@@ -391,8 +391,20 @@
     <main>
       <div class="grid">
         <a href="#about" aria-label="About me" class="item about one"
-          ><span>About</span></a
-        >
+          ><span>About</span>
+          <picture>
+            <source
+              srcset="./img/me@2x.webp 2x, ./img/me.webp 1x"
+              sizes="100vw"
+              type="image/webp"
+            />
+            <source
+              srcset="./img/me@2x.jpg 2x, ./img/me.jpg 1x"
+              sizes="100vw"
+            />
+            <img src="./img/me.jpg" alt="Photo of Andy Hoffman" />
+          </picture>
+        </a>
         <a href="#work" class="item work two"><span>Work</span></a>
         <a href="#hobbies" class="item hobbies three"><span>Hobbies</span></a>
         <a href="#skills" class="item skills four"><span>Skills</span></a>
