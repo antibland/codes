@@ -28,8 +28,6 @@ body {
   margin: 0;
   max-width: 100%;
   overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -46,6 +44,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 body.webp {
