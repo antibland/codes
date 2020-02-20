@@ -3,4 +3,4 @@
 *.sublime-project
 *.sublime-workspace
 *.orig
-node_modules/*
+node_modules
