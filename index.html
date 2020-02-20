@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>Andy Hoffman | Full-stack developer | Portland, OR</title>
-    <link rel="stylesheet" href="prod/style.css" />
+    <link rel="stylesheet" href="dist/style.bundle.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Andy Hoffman" />
@@ -83,7 +83,35 @@
       <div class="content">
         <h1>Work</h1>
 
-        <h2>Recent</h2>
+        <h2>Code</h2>
+        <ul>
+          <li>
+            <a
+              rel="noopener external"
+              target="_blank"
+              href="https://github.com/antibland/"
+              >GitHub</a
+            >
+          </li>
+          <li>
+            <a
+              rel="noopener external"
+              target="_blank"
+              href="https://stackoverflow.com/users/949217/andy-hoffman"
+              >Stack Overflow</a
+            >
+          </li>
+          <li>
+            <a
+              rel="noopener external"
+              target="_blank"
+              href="https://codepen.io/antibland/"
+              >CodePen</a
+            >
+          </li>
+        </ul>
+
+        <h2>Recent Projects</h2>
         <ul>
           <li>
             <a
@@ -203,36 +231,52 @@
             </div>
           </li>
         </ul>
+      </div>
+    </section>
 
-        <h2>Code</h2>
-        <ul>
-          <li>
-            <a
-              rel="noopener external"
-              target="_blank"
-              href="https://github.com/antibland/"
-              >GitHub</a
-            >
-          </li>
-          <li>
-            <a
-              rel="noopener external"
-              target="_blank"
-              href="https://stackoverflow.com/users/949217/andy-hoffman"
-              >Stack Overflow</a
-            >
-          </li>
-          <li>
-            <a
-              rel="noopener external"
-              target="_blank"
-              href="https://codepen.io/antibland/"
-              >CodePen</a
-            >
-          </li>
+    <section id="hobbies" class="content-wrapper" aria-hidden="true">
+      <div class="content">
+        <h1>Hobbies</h1>
+        <p>
+          I don't code all day, every day. I play the drums, work diligently on
+          my jump shot and ride my trusty bike around Portland. According to
+          <a rel="noopener external" href="https://www.duolingo.com/"
+            >duoLingo</a
+          >, the language learning app, I've achieved 70% fluency in German 🇩🇪.
+          Even though that is probably marketing hyperbole, it's an effective
+          motivational tool.
+          <span style="cursor: help" title="I'm still learning!" lang="de"
+            >Ich lerne immernoch!</span
+          >
+        </p>
+      </div>
+    </section>
+
+    <section id="skills" class="content-wrapper" aria-hidden="true">
+      <div class="content">
+        <h1>Skills</h1>
+        <ul class="multi-column-list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript (ES6+)</li>
+          <li>React &frasl; Redux</li>
+          <li>Node.js</li>
+          <li>Mongo</li>
+          <li>SQL</li>
+          <li>Liquid</li>
+          <li>Task Runners</li>
+          <li>Accessibility</li>
+          <li>REST</li>
+          <li>Selenium</li>
         </ul>
+      </div>
+    </section>
 
-        <h2>Published Writing</h2>
+    <section id="writing" class="content-wrapper" aria-hidden="true">
+      <div class="content">
+        <h1>Writing</h1>
+
+        <h2>Published Work</h2>
 
         <dl>
           <dt>
@@ -289,44 +333,6 @@
             in the right direction.
           </dd>
         </dl>
-      </div>
-    </section>
-
-    <section id="hobbies" class="content-wrapper" aria-hidden="true">
-      <div class="content">
-        <h1>Hobbies</h1>
-        <p>
-          I don't code all day, every day. I play the drums, work diligently on
-          my jump shot and ride my trusty bike around Portland. According to
-          <a rel="noopener external" href="https://www.duolingo.com/"
-            >duoLingo</a
-          >, the language learning app, I've achieved 70% fluency in German 🇩🇪.
-          Even though that is probably marketing hyperbole, it's an effective
-          motivational tool.
-          <span style="cursor: help" title="I'm still learning!" lang="de"
-            >Ich lerne immernoch!</span
-          >
-        </p>
-      </div>
-    </section>
-
-    <section id="skills" class="content-wrapper" aria-hidden="true">
-      <div class="content">
-        <h1>Skills</h1>
-        <ul class="multi-column-list">
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript (ES6)</li>
-          <li>React</li>
-          <li>Node.js</li>
-          <li>Mongo</li>
-          <li>SQL</li>
-          <li>Liquid</li>
-          <li>Task Runners</li>
-          <li>Accessibility</li>
-          <li>REST</li>
-          <li>Selenium</li>
-        </ul>
       </div>
     </section>
 
@@ -406,47 +412,10 @@
           </picture>
         </a>
         <a href="#work" class="item work two"><span>Work</span></a>
-        <a href="#hobbies" class="item hobbies three"><span>Hobbies</span></a>
-        <a href="#skills" class="item skills four"><span>Skills</span></a>
-        <a href="#contact" class="item contact five"><span>Contact</span></a>
-        <ul class="social">
-          <li>
-            <a
-              target="_blank"
-              aria-label="Link to Stack Overflow"
-              rel="noopener external"
-              href="https://stackoverflow.com/users/949217/andy-hoffman"
-              ><span>Stack Overflow</span>
-              <svg aria-hidden="true">
-                <use xlink:href="svg-defs.svg#svg-so" />
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a
-              target="_blank"
-              aria-label="Link to Github"
-              rel="noopener external"
-              href="https://github.com/antibland/"
-              ><span>Github</span>
-              <svg aria-hidden="true">
-                <use xlink:href="svg-defs.svg#svg-github" />
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a
-              target="_blank"
-              aria-label="Link to CodePen"
-              rel="noopener external"
-              href="https://codepen.io/antibland/"
-              ><span>CodePen</span>
-              <svg aria-hidden="true">
-                <use xlink:href="svg-defs.svg#svg-codepen" />
-              </svg>
-            </a>
-          </li>
-        </ul>
+        <a href="#writing" class="item writing three"><span>Writing</span></a>
+        <a href="#hobbies" class="item hobbies four"><span>Hobbies</span></a>
+        <a href="#skills" class="item skills five"><span>Skills</span></a>
+        <a href="#contact" class="item contact six"><span>Contact</span></a>
       </div>
     </main>
 
