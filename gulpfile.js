@@ -10,11 +10,11 @@ const config = {
   app: {
     css: "./css/**/*.css",
     html: "./*.html",
-    root: "./"
+    root: "./",
   },
   dist: {
-    base: "./dist/"
-  }
+    base: "./dist/",
+  },
 };
 
 function cssTask(done) {
@@ -25,21 +25,6 @@ function cssTask(done) {
   done();
 }
 
-// function fontTask(done) {
-//   src(config.app.fonts).pipe(dest(config.dist.fonts));
-//   done();
-// }
-
-// function imagesTask(done) {
-//   src(config.app.images).pipe(dest(config.dist.images));
-//   done();
-// }
-
-// function templateTask(done) {
-//   src(config.app.html).pipe(dest(config.app.root));
-//   done();
-// }
-
 function watchFiles() {
   watch(config.app.css, series(cssTask, reload));
   watch(config.app.html, series(reload));
@@ -48,8 +33,8 @@ function watchFiles() {
 function liveReload(done) {
   browserSync.init({
     server: {
-      baseDir: "./"
-    }
+      baseDir: "./",
+    },
   });
   done();
 }

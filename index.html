@@ -245,7 +245,7 @@
           >, the language learning app, I've achieved 70% fluency in German 🇩🇪.
           Even though that is probably marketing hyperbole, it's an effective
           motivational tool.
-          <span style="cursor: help" title="I'm still learning!" lang="de"
+          <span style="cursor: help;" title="I'm still learning!" lang="de"
             >Ich lerne immernoch!</span
           >
         </p>
@@ -259,15 +259,13 @@
           <li>HTML</li>
           <li>CSS</li>
           <li>JavaScript (ES6+)</li>
+          <li>Accessibility</li>
           <li>React &frasl; Redux</li>
+          <li>Jest</li>
           <li>Node.js</li>
           <li>Mongo</li>
-          <li>SQL</li>
           <li>Liquid</li>
           <li>Task Runners</li>
-          <li>Accessibility</li>
-          <li>REST</li>
-          <li>Selenium</li>
         </ul>
       </div>
     </section>
@@ -420,13 +418,13 @@
     </main>
 
     <script>
-      (function() {
+      (function () {
         "use strict";
 
         function ally_showActiveSection() {
           document
             .querySelectorAll(".content-wrapper")
-            .forEach(function(section) {
+            .forEach(function (section) {
               section.setAttribute("aria-hidden", true);
             });
 
@@ -445,7 +443,7 @@
           var webP = new Image();
           webP.src =
             "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
-          webP.onload = webP.onerror = function() {
+          webP.onload = webP.onerror = function () {
             callback(webP.height === 2);
           };
         }
@@ -456,7 +454,7 @@
             : document.body.classList.add("no-webp");
         }
 
-        window.onload = function() {
+        window.onload = function () {
           if (location.hash) {
             ally_showActiveSection();
           }
