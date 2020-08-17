@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/antibland
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://andyhoffman.codes
+  * I am antibland (https://keybase.io/antibland) on keybase.
+  * I have a public key ASAwAwJPtJiDWnDvIycImYmsclIX_CJ6FuzSK2Yq9CTQyAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01203003024fb498835a70ef2327089989ac725217fc227a16ecd22b662af424d0c80a",
+      "host": "keybase.io",
+      "kid": "01203003024fb498835a70ef2327089989ac725217fc227a16ecd22b662af424d0c80a",
+      "uid": "f29f0863d9bd7f317f82c997661b3019",
+      "username": "antibland"
+    },
+    "merkle_root": {
+      "ctime": 1583609526,
+      "hash": "3b7acaceeb6d82ba7cc8ea30c313da1a1b6a39661765a836c1711b8cc9565786aa2af5c1f4da3ea9035bfacd5b226c180dfaa46fbbde1d66818e2093bf6d8e3d",
+      "hash_meta": "b1a4e8b9a0fac4b23afc99fd6d5ccda3b566fe86c66cc547db97f580aa7266e5",
+      "seqno": 15151905
+    },
+    "service": {
+      "entropy": "z9zI+xgwoOSpuVbVw98tO0xE",
+      "hostname": "andyhoffman.codes",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.2.1"
+  },
+  "ctime": 1583609540,
+  "expire_in": 504576000,
+  "prev": "3232f927ad417a4bbe90ab46ce80af8bc03591e953f24cd096276af8c802387d",
+  "seqno": 6,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgMAMCT7SYg1pw7yMnCJmJrHJSF/wiehbs0itmKvQk0MgKp3BheWxvYWTESpcCBsQgMjL5J61Beku+kKtGzoCvi8A1kelT8kzQlidq+MgCOH3EICkq/wTmxvD14id+EZzMUss9lM8L27Bpypv2b4KAeqSDAgHCo3NpZ8RAcA/tMWBj1j934DMd5l3TReUHWFSJtFNCCQleAbG5hWaCpbj7IqJRHEPNSeY4r7isNlPshowMrw1V+hhzUJofDahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIKYX6ImwgRRkp4z69D7WRWttVNuw3nYyE5GuQsKfVyywo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/antibland
+
+==================================================================
