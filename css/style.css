@@ -355,6 +355,8 @@ main {
   flex-wrap: wrap;
   will-change: transform, opacity;
   transform-origin: center center;
+  align-items: center;
+  justify-content: center;
 }
 
 body:target ~ main {
@@ -682,6 +684,7 @@ button:focus {
     display: grid;
     grid-template-rows: repeat(8, 1fr);
     grid-template-columns: repeat(12, 1fr);
+    min-height: max(45vh, 44rem);
   }
 
   .grid:hover .item:not(:hover) {
