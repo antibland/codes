@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/antibland/codes#readme",
   "devDependencies": {
-    "browser-sync": "^2.26.12",
+    "browser-sync": "^2.27.10",
     "browserlist": "^1.0.1",
     "cssnano": "^4.1.10",
     "del": "^5.1.0",
