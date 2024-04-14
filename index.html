@@ -5,39 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- HTML Meta Tags -->
-    <title>Andy Hoffman | Full-stack developer | Barrington, NH</title>
+    <title>Andy Hoffman, a full-stack developer living in NH</title>
     <meta
       name="description"
       content="The personal website of Andy Hoffman. Built with Vanilla JS, Gulp, CSS, and Visual Studio Code."
     />
-    <meta
-      name="keywords"
-      content="new hampshire web developer, nh web, full stack, full stack developer, React, ReactJS, Next.js, Next, NextJS, framework, Node, NodeJS, node.js,, CSS, shopify, shopify theme, mongodb, mongo, sql, html, rest, api, accessibility, accessibility compliance, es6, vanilla, mentor, consult, consulting"
-    />
 
     <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://andyhoffman.codes/" />
+    <meta property="og:url" content="https://andyhoffman.codes" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Andy Hoffman | Full-stack developer | Barrington, NH"
+      content="Andy Hoffman, a full-stack developer living in NH"
     />
     <meta
       property="og:description"
       content="The personal website of Andy Hoffman. Built with Vanilla JS, Gulp, CSS, and Visual Studio Code."
     />
+
     <meta
       property="og:image"
-      content="https://andyhoffman.codes/img/andy-profile-scarf@2x.webp"
+      content="https://ogcdn.net/e4b8c678-7bd5-445d-ba03-bfaad510c686/v4/andyhoffman.codes/Andy%20Hoffman%2C%20a%20full-stack%20developer%20living%20in%20NH/https%3A%2F%2Fandyhoffman.codes%2Fimg%2Fandy-profile-scarf%402x.webp/og.png"
     />
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:domain" content="andyhoffman.codes" />
-    <meta property="twitter:url" content="https://andyhoffman.codes/" />
+    <meta property="twitter:url" content="https://andyhoffman.codes" />
     <meta
       name="twitter:title"
-      content="Andy Hoffman | Full-stack developer | Barrington, NH"
+      content="Andy Hoffman, a full-stack developer living in NH"
     />
     <meta
       name="twitter:description"
@@ -45,7 +42,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://andyhoffman.codes/img/andy-profile-scarf@2x.webp"
+      content="https://ogcdn.net/e4b8c678-7bd5-445d-ba03-bfaad510c686/v4/andyhoffman.codes/Andy%20Hoffman%2C%20a%20full-stack%20developer%20living%20in%20NH/https%3A%2F%2Fandyhoffman.codes%2Fimg%2Fandy-profile-scarf%402x.webp/og.png"
     />
 
     <!-- CSS -->
@@ -620,47 +617,49 @@
           <svg aria-hidden="true">
             <use xlink:href="svg-defs.svg#svg-phone-icon" />
           </svg>
-          <div class="text">Schedule a call</div>
+          <div class="text text-md">Schedule a Call</div>
         </a>
 
-        <form
-          method="POST"
-          action="//formspree.io/antibland@gmail.com"
-          class="flex flex-col gap-5"
-        >
-          <div>
-            <label for="type">How can I help?</label>
-            <div class="styled-select slate">
-              <select id="type" name="type">
-                <option value="Project">Project</option>
-                <option value="Consulting">Consulting</option>
-                <option value="General">Something else</option>
-              </select>
+        <section>
+          <form
+            method="POST"
+            action="//formspree.io/antibland@gmail.com"
+            class="flex flex-col gap-5"
+          >
+            <div>
+              <label for="type">How can I help?</label>
+              <div class="styled-select slate">
+                <select id="type" name="type">
+                  <option value="Project">Project</option>
+                  <option value="Consulting">Consulting</option>
+                  <option value="General">Something else</option>
+                </select>
+              </div>
             </div>
-          </div>
 
-          <div>
-            <input
-              aria-label="email"
-              required
-              autocapitalize="none"
-              type="email"
-              name="email"
-              placeholder="Email"
-            />
-          </div>
+            <div>
+              <input
+                aria-label="email"
+                required
+                autocapitalize="none"
+                type="email"
+                name="email"
+                placeholder="Email"
+              />
+            </div>
 
-          <div>
-            <textarea
-              aria-label="message"
-              required
-              name="message"
-              placeholder="Message"
-            ></textarea>
-          </div>
-          <button class="mb-4" type="submit">Send</button>
-          <input type="hidden" name="_next" value="/#thanks" />
-        </form>
+            <div>
+              <textarea
+                aria-label="message"
+                required
+                name="message"
+                placeholder="Message"
+              ></textarea>
+            </div>
+            <button class="mb-4 colorful-button" type="submit">Send</button>
+            <input type="hidden" name="_next" value="/#thanks" />
+          </form>
+        </section>
       </div>
     </section>
 

@@ -36,8 +36,10 @@
 html,
 body {
   margin: 0;
-  max-inline-size: 100%;
-  overflow-x: hidden;
+  position: fixed;
+  width: 100dvw;
+  height: 100vh;
+  height: 100dvh;
 }
 
 body {
@@ -47,6 +49,7 @@ body {
   line-height: 1.5;
   display: flex;
   min-height: 100vh;
+  min-height: 100dvh;
   max-inline-size: 100%;
   flex-direction: column;
   background-color: var(--bistre);
@@ -418,11 +421,11 @@ header span {
 .colorful-button {
   appearance: none;
   backface-visibility: hidden;
-  background-color: var(--bronze);
+  background-color: var(--indian-red);
   border-radius: 0.5rem;
   border-style: none;
   box-shadow: rgba(39, 174, 96, 0.15) 0 4px 9px;
-  color: var(--bistre);
+  color: white;
   cursor: pointer;
   display: inline-block;
   font-family: Inter, -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
@@ -557,35 +560,28 @@ textarea {
   border: none;
   cursor: pointer;
   appearance: none;
-  transition: 0.6s background-color, border, color;
-  background-color: var(--indian-red);
-  border-radius: 4px;
-  text-indent: 0;
-  display: inline-block;
-  color: white;
-  font-size: 0.9em;
-  line-height: 2;
-  font-weight: 700;
-  font-style: normal;
-  text-decoration: none;
-  letter-spacing: 1.3px;
-  padding: 0.1em 0.5em;
 }
 
 .schedule-link {
   position: absolute;
   top: 10px;
   inset-inline-end: 0;
-  font-weight: bold;
   width: 220px;
   height: 61px;
   display: flex;
   border: none !important;
   align-items: center;
-}
+  color: var(--text-color);
+  transition: 0.3s all;
 
-.schedule-link svg {
-  width: 23px;
+  &:hover {
+    color: white;
+  }
+
+  svg {
+    width: 29px;
+    rotate: 15deg;
+  }
 }
 
 .schedule-link .text {
